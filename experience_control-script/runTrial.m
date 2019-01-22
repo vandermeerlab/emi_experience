@@ -116,8 +116,8 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 			state.state = new_state;
 		end
 
-	    set(state.display.status, 'String', ...
-	    	sprintf('Time %0.1f \t Phase %s \t State %s', toc(state.timer), phase.name, state.state));
+% 	    set(state.display.status, 'String', ...
+% 	    	sprintf('Time %0.1f \t Phase %s \t State: %s', toc(state.timer), phase.name, state.state));
 	end
 
 	NlxSendCommand(sprintf('-PostEvent "end of trial %d" 0 0', state.n));

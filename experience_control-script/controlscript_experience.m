@@ -81,9 +81,9 @@ expt.probe_highlow_first = 0;
 expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 
 % Make the tone cue
-% expt.tone_duration = 2;
-% expt.tone_frequency = 880;
-% expt.tone = makeTone(expt.tone_duration, expt.tone_frequency);
+expt.tone_duration = 2;
+expt.tone_frequency = 880;
+expt.tone = makeTone(expt.tone_duration, expt.tone_frequency);
 
 % phase parameters
 phase1.name = '1';
