@@ -8,4 +8,5 @@ function [] = verifyTrial(phase, state)
 	assert(state.control.rewarded == 0);
 	assert(state.control.unrewarded == 0);
 	assert(state.control.tones == 0);
+    assert(state.n == phase.total);
 end

@@ -1,5 +1,4 @@
-function [] = initPhase(expt, phase, state)
-	phase.total = phase.high+phase.medium+phase.low+phase.control;
+function [expt, phase, state] = initPhase(expt, phase, state)
 	state.n = 0;
 	state.rewarded = 0;
 	state.tone = 0;
@@ -13,11 +12,11 @@ function [] = initPhase(expt, phase, state)
 
 	phase.template = cell(1, phase.total);
 	if phase.highlow_first
-		phase.template(1:2:end) = 'Forced_HighLow';
-		phase.template(2:2:end) = 'Forced_Mediums';
-	else
-		phase.template(1:2:end) = 'Forced_Mediums';
-		phase.template(2:2:end) = 'Forced_HighLow';
+		phase.template(1:2:end) = {'HighLow'};
+		phase.template(2:2:end) = {'Mediums'};
+    else
+		phase.template(1:2:end) = {'Mediums'};
+		phase.template(2:2:end) = {'HighLow'};
 	end
 
 	probe.first = floor(phase.total/3);
@@ -28,21 +27,21 @@ function [] = initPhase(expt, phase, state)
 	else
 		probe.first_choice = 'Mediums';
 		probe.second_choice = 'HighLow';
-	end
-
-	if ~strcmp(phase.template{probe.first}, strcat('Forced_', probe.first_choice))
+    end
+    
+	if ~strcmp(phase.template{probe.first}, {probe.first_choice})
 		probe.first = probe.first + 1;
 	end
-	assert(strcmp(phase.template(probe.first), strcat('Forced_', probe.first_choice)));
-	phase.template(probe.first) = strcat('Probe_', probe.first_choice);
-	if ~strcmp(phase.template{probe.second}, strcat('Forced_', probe.second_choice))
+	assert(strcmp(phase.template(probe.first), {probe.first_choice}));
+	phase.template(probe.first) = {strcat('Probe-', probe.first_choice)};
+	if ~strcmp(phase.template{probe.second}, {probe.second_choice})
 		probe.second = probe.second + 1;
 	end
-	assert(strcmp(phase.template(probe.second), strcat('Forced_', probe.second_choice)));
-	phase.template(probe.second) = strcat('Probe_', probe.second_choice);
+	assert(strcmp(phase.template(probe.second), {probe.second_choice}));
+	phase.template(probe.second) = {strcat('Probe-', probe.second_choice)};
 
-	assert(sum(contains(phase.template, "Forced_HighLow")) == phase.high + phase.low - 1);
-	assert(sum(contains(phase.template, "Forced_Mediums")) == phase.medium + phase.control - 1);
-	assert(sum(contains(phase.template, "Probe_HighLow")) == 1);
-	assert(sum(contains(phase.template, "Probe_Mediums")) == 1);
+	assert(sum(ismember(phase.template, {'HighLow'})) == phase.high + phase.low - 1);
+	assert(sum(ismember(phase.template, {'Mediums'})) == phase.medium + phase.control - 1);
+	assert(sum(ismember(phase.template, {'Probe-HighLow'})) == 1);
+	assert(sum(ismember(phase.template, {'Probe-Mediums'})) == 1);
 end

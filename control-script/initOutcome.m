@@ -1,4 +1,4 @@
-function [] = initOutcome(outcome, n_trials, reward_prob)
+function outcome = initOutcome(outcome, n_trials, reward_prob)
 	outcome.rewarded = floor(n_trials * reward_prob);
 	outcome.unrewarded = floor(n_trials * (1 - reward_prob));
 	if outcome.rewarded + outcome.unrewarded ~= n_trials

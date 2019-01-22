@@ -22,7 +22,7 @@ disp('Initializing settings');
 expt.photobeam_port = 1; % TTLInputPort
 expt.feeder_port = 2; % TTLOutputPort
 
-%% Arms
+% Arms
 expt.north.name = 'North';
 expt.east.name = 'East';
 expt.south.name = 'South';
@@ -81,34 +81,40 @@ expt.probe_highlow_first = 0;
 expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 
 % Make the tone cue
-expt.tone_duration = 2;
-expt.tone_frequency = 880;
-expt.tone = makeTone(tone_duration, tone_frequency);
+% expt.tone_duration = 2;
+% expt.tone_frequency = 880;
+% expt.tone = makeTone(expt.tone_duration, expt.tone_frequency);
 
 % phase parameters
 phase1.name = '1';
 phase1.high = 15;
 phase1.medium = 9;
 phase1.low = 2;
-phase1.contol = 9;
+phase1.control = 9;
 phase1.highlow_first = expt.highlow_first;
 phase1.probe_highlow_first = expt.probe_highlow_first;
+phase1.template = {};
+phase1.total = phase1.high+phase1.medium+phase1.low+phase1.control;
 
 phase2.name = '2';
 phase2.high = 15;
 phase2.medium = 9;
 phase2.low = 2;
-phase2.contol = 9;
+phase2.control = 9;
 phase2.highlow_first = expt.highlow_first;
 phase2.probe_highlow_first = expt.probe_highlow_first; % or ~probe_highlow_first or whatever
+phase2.template = {};
+phase2.total = phase2.high+phase2.medium+phase2.low+phase2.control;
 
 phase3.name = '3';
 phase3.high = 16;
 phase3.medium = 8;
 phase3.low = 2;
-phase3.contol = 8;
+phase3.control = 8;
 phase3.highlow_first = expt.highlow_first;
 phase3.probe_highlow_first = expt.probe_highlow_first;
+phase3.template = {};
+phase3.total = phase3.high+phase3.medium+phase3.low+phase3.control;
 
 %% Check feeders
 for i=1:length(expt.feeders)
@@ -129,20 +135,24 @@ state.control.name = 'Control';
 state.control.carryover = '';
 state.low.name = 'Low';
 state.low.carryover = '';
+state.display = [];
 
-initDisplay(state);
+state = initDisplay(state);
 
 phases = {phase1, phase2, phase3};
 for i=1:length(phases)
 	phase = phases{i};
-
+    state.n = 0;
+    
 	set(state.display.messages, 'String', '');
-	initPhase(expt, phase, state);
-	while state.current_n < phase.total
-		getTrial(expt, phase, state);
-		runTrial(expt, phase, state);
+	[expt, phase, state] = initPhase(expt, phase, state);
+    
+	while state.n < phase.total
+		[expt, phase, state] = getTrial(expt, phase, state);
+		[expt, phase, state] = runTrial(expt, phase, state);
 	end
+    
 	verifyTrial(expt, phase, state);
-	set(state.display.messages, 'String', sprintf('End of phase %d. Press a key or mouse button to continue.', i));
+	set(state.display.messages, 'String', sprintf('End of phase %s. Press a key or mouse button to continue.', phase.name));
 	waitforbuttonpress();
 end

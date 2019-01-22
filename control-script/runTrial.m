@@ -1,4 +1,4 @@
-function [] = runTrial(expt, phase, state)
+function [expt, phase, state] = runTrial(expt, phase, state)
 
 	disp(sprintf('Starting trial %d', state.n));
 	NlxSendCommand(sprintf('-PostEvent "starting trial %d" 0 0', state.n));
@@ -37,7 +37,7 @@ function [] = runTrial(expt, phase, state)
     			    if eq(pb, arm.start_pb)
     					new_state = 'approach';
     					approaching = state.low;
-    				else
+                    end
     			end
 	    	elseif strcmp(state.trial, 'Probe_Mediums')
 	    		arm = expt.outcome2arm('Medium');
@@ -49,7 +49,7 @@ function [] = runTrial(expt, phase, state)
     			    if eq(pb, arm.start_pb)
     					new_state = 'approach';
     					approaching = state.control;
-    				else
+                    end
     			end
 	    	else
     			arm = expt.outcome2arm(state.trial.name);
@@ -68,7 +68,7 @@ function [] = runTrial(expt, phase, state)
     				arm = expt.outcome2arm('Low');
     			    if eq(pb, arm.end_pb)
     					new_state = 'return';
-    				else
+                    end
     			end
 	    	elseif strcmp(state.trial, 'Probe_Mediums')
 	    		arm = expt.outcome2arm('Medium');
@@ -78,7 +78,7 @@ function [] = runTrial(expt, phase, state)
     				arm = expt.outcome2arm('Control');
     			    if eq(pb, arm.end_pb)
     					new_state = 'return';
-    				else
+                    end
     			end
 	    	else
     			arm = expt.outcome2arm(state.trial.name);
@@ -117,7 +117,7 @@ function [] = runTrial(expt, phase, state)
 		end
 
 	    set(state.display.status, 'String', ...
-	    	sprintf('Time %0.1f\tPhase %s\tState %s', toc(state.timer), phase.name, state.state));
+	    	sprintf('Time %0.1f \t Phase %s \t State %s', toc(state.timer), phase.name, state.state));
 	end
 
 	NlxSendCommand(sprintf('-PostEvent "end of trial %d" 0 0', state.n));
