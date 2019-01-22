@@ -4,7 +4,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 	NlxSendCommand(sprintf('-PostEvent "starting trial %d" 0 0', state.n));
 	finished = 0;
 
-	while ~finished && toc(state.timer) < state.max_time
+	while ~finished && toc(state.timer) < expt.max_time
 
 	    % check for any broken photobeams and update
 	    pb_state = checkSensor(expt.photobeam_port);
@@ -29,7 +29,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 	    if state.state == 'return'
 	    	if strcmp(state.trial, 'Probe_HighLow')
 	    		arm = expt.outcome2arm('High');
-    			if eq(pb, arm.start_pb)
+    			if isequal(pb, arm.start_pb)
     				new_state = 'approach';
     				approaching = state.high;
     			else
@@ -53,7 +53,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
     			end
 	    	else
     			arm = expt.outcome2arm(state.trial.name);
-    			if eq(pb, arm.start_pb)
+    			if isequal(pb, arm.start_pb)
     				new_state = 'approach';
     				approaching = state.trial;
     			end
