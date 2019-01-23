@@ -66,10 +66,10 @@ expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 phase.name = 'training';
 phase.north = 20;
 phase.east = 20;
-phase.west = 20;
+phase.south = 20;
 phase.template = {};
-phase.total = phase.north+phase.east+phase.west;
-phase.template = cell(1, phase.total);
+phase.total = phase.north+phase.east+phase.south;
+phase.north_first = 0;
 
 %% Check feeders
 for i=1:length(expt.feeders)
