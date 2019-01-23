@@ -64,9 +64,10 @@ expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 
 % phase parameters
 phase.name = 'training';
-phase.north = 20;
-phase.east = 20;
-phase.south = 20;
+phase.n = 20;
+phase.north = phase.n;
+phase.east = phase.n;
+phase.south = phase.n;
 phase.template = {};
 phase.total = phase.north+phase.east+phase.south;
 phase.north_first = 0;
@@ -97,4 +98,4 @@ while state.n < phase.total
 end
 
 verifyTrial(expt, phase, state);
-set(state.display.messages, 'String', sprintf('End of %s.', phase.name));
+set(state.display.messages, 'String', sprintf('End of %s. Running phases are finished for this session.', phase.name));

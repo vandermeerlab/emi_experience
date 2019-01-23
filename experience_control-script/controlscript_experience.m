@@ -153,6 +153,11 @@ for i=1:length(phases)
 	end
     
 	verifyTrial(expt, phase, state);
-	set(state.display.messages, 'String', sprintf('End of phase %s. Press a key or mouse button to continue.', phase.name));
-	waitforbuttonpress();
+	if phase.name == num2str(length(phases))
+		set(state.display.messages, 'String', sprintf('End of phase %s. Running phases are finished for this session.', phase.name));
+	else
+		set(state.display.messages, 'String', sprintf('End of phase %s. Press a key or mouse button to continue.', phase.name));
+		waitforbuttonpress();
+	end
+	
 end
