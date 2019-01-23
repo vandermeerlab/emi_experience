@@ -34,19 +34,19 @@ function [expt, phase, state] = runTrial(expt, phase, state)
     				approaching = state.high;
     			else
     				arm = expt.outcome2arm('Low');
-    			    if eq(pb, arm.start_pb)
+    			    if isequal(pb, arm.start_pb)
     					new_state = 'approach';
     					approaching = state.low;
                     end
     			end
 	    	elseif strcmp(state.trial, 'Probe_Mediums')
 	    		arm = expt.outcome2arm('Medium');
-    			if eq(pb, arm.start_pb)
+    			if isequal(pb, arm.start_pb)
     				new_state = 'approach';
     				approaching = state.medium;
     			else
     				arm = expt.outcome2arm('Control');
-    			    if eq(pb, arm.start_pb)
+    			    if isequal(pb, arm.start_pb)
     					new_state = 'approach';
     					approaching = state.control;
                     end
@@ -62,27 +62,27 @@ function [expt, phase, state] = runTrial(expt, phase, state)
     		assert(state.state, 'approach');
 	    	if strcmp(state.trial, 'Probe_HighLow')
 	    		arm = expt.outcome2arm('High');
-    			if eq(pb, arm.end_pb)
+    			if isequal(pb, arm.end_pb)
     				new_state = 'return';
     			else
     				arm = expt.outcome2arm('Low');
-    			    if eq(pb, arm.end_pb)
+    			    if isequal(pb, arm.end_pb)
     					new_state = 'return';
                     end
     			end
 	    	elseif strcmp(state.trial, 'Probe_Mediums')
 	    		arm = expt.outcome2arm('Medium');
-    			if eq(pb, arm.end_pb)
+    			if isequal(pb, arm.end_pb)
     				new_state = 'return';
     			else
     				arm = expt.outcome2arm('Control');
-    			    if eq(pb, arm.end_pb)
+    			    if isequal(pb, arm.end_pb)
     					new_state = 'return';
                     end
     			end
 	    	else
     			arm = expt.outcome2arm(state.trial.name);
-    			if eq(pb, arm.end_pb)
+    			if isequal(pb, arm.end_pb)
     				new_state = 'return';
     			end
     		end
@@ -101,7 +101,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 			if state.tone
 				play(expt.tone);
 				NlxSendCommand(sprintf('-PostEvent "tone on" 0 0'));
-				if eq(approaching, state.control)
+				if isequal(approaching, state.control)
 					state.control.tones = state.control.tones - 1;
 				end
 			end
