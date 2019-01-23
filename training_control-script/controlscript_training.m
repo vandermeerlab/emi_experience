@@ -75,7 +75,7 @@ phase.north_first = 0;
 %% Check feeders
 for i=1:length(expt.feeders)
 	f = expt.feeders{i};
-	disp(['Firing ', f.name, ' (', num2srt(expt.feeder.n_pellets), ' pellets) ...']);
+	disp(['Firing ', f.name, ' (', num2str(expt.feeder.n_pellets), ' pellets) ...']);
 	fireFeeder(expt.feeder_port, f.pin, expt.feeder.n_pellets);
 end
 
