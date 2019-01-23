@@ -79,4 +79,6 @@ function [expt, phase, state] = getTrial(expt, phase, state)
 	end
 	lines{2} = sprintf('Rewarded: %d \t Tone: %d', state.rewarded, state.tone);
 	set(state.display.trial, 'String', lines);
+    
+    drawnow;
 end

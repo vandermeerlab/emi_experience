@@ -80,11 +80,6 @@ expt.highlow_first = 0;
 expt.probe_highlow_first = 0;
 expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 
-% Make the tone cue
-expt.tone_duration = 2;
-expt.tone_frequency = 880;
-expt.tone = makeTone(expt.tone_duration, expt.tone_frequency);
-
 % phase parameters
 phase1.name = '1';
 phase1.high = 15;
@@ -115,6 +110,11 @@ phase3.highlow_first = expt.highlow_first;
 phase3.probe_highlow_first = expt.probe_highlow_first;
 phase3.template = {};
 phase3.total = phase3.high+phase3.medium+phase3.low+phase3.control;
+
+% Make the tone cue
+expt.tone_duration = 2;
+expt.tone_frequency = 880;
+expt.tone = makeTone(expt.tone_duration, expt.tone_frequency);
 
 %% Check feeders
 for i=1:length(expt.feeders)
@@ -159,5 +159,5 @@ for i=1:length(phases)
 		set(state.display.messages, 'String', sprintf('End of phase %s. Press a key or mouse button to continue.', phase.name));
 		waitforbuttonpress();
 	end
-	
+	drawnow;
 end

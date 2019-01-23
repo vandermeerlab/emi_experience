@@ -99,3 +99,4 @@ end
 
 verifyTrial(expt, phase, state);
 set(state.display.messages, 'String', sprintf('End of %s. Running phases are finished for this session.', phase.name));
+drawnow;

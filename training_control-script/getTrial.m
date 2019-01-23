@@ -20,4 +20,6 @@ function [expt, phase, state] = getTrial(expt, phase, state)
 
 	% Trial
 	set(state.display.trial, 'String', sprintf('Forced trial, %s', state.trial.name));
+    
+    drawnow;
 end

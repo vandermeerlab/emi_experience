@@ -57,9 +57,9 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 
  	    set(state.display.status, 'String', ...
  	    	sprintf('Time %0.1f \t Phase %s \t State: %s', toc(state.timer), phase.name, state.state));
+        
+        drawnow;
 	end
 
 	NlxSendCommand(sprintf('-PostEvent "end of trial %d" 0 0', state.n));
-
-	drawnow
 end
