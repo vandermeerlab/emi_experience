@@ -3,7 +3,7 @@ Overview
 ========
 
 This control script is used for training rats to run on a maze.
-The layout of the maze is a T-shape, with 3 segments for each arm.
+The layout of the maze is a T-shape, with 2 track segments for each arm.
 Every trial is **forced**, with a transparent barrier blocking one arm, 
 such that the rat returning from one feeder only has one option for the next trial.
 Rats receive 2 pellets at the completion of every trial.
