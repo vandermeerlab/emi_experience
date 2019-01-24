@@ -61,7 +61,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 		time.seconds = mod(seconds, 60);
 
  	    set(state.display.status, 'String', ...
- 	    	sprintf('Time %.0f:%.0f:%.0f \t Phase %s \t State: %s', time.hours, time.minutes, time.seconds, phase.name, state.state));
+ 	    	sprintf('Time %02.0f:%02.0f:%02.0f \t Phase %s \t State: %s', time.hours, time.minutes, time.seconds, phase.name, state.state));
         
         drawnow;
 	end
