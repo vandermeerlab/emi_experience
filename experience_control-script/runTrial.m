@@ -116,8 +116,13 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 			state.state = new_state;
 		end
 
+		seconds = toc(state.timer);
+		time.hours = floor(seconds / (60 * 60));
+		time.minutes = mod(floor(seconds / 60), 60);
+		time.seconds = mod(seconds, 60);
+
 	    set(state.display.status, 'String', ...
-	    	sprintf('Time %0.1f \t Phase %s \t State: %s', toc(state.timer), phase.name, state.state));
+	    	sprintf('Time %d : %d : %d \t Phase %s \t State: %s', time.hours, time.minutes, time.seconds, phase.name, state.state));
 
 		drawnow;
 	end
