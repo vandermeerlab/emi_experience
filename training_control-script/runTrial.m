@@ -24,35 +24,13 @@ function [expt, phase, state] = runTrial(expt, phase, state)
             state.last_pb_state = pb_state;
 	    end
 
-	    % Determine state changes
-	    new_state = '';
-	    if state.state == 'return'
-			arm = state.trial.name;
-			if isequal(pb, arm.start_pb)
-				new_state = 'approach';
-				approaching = state.trial;
-    		end
-    	else
-    		assert(state.state, 'approach');
-			arm = state.trial.name;
-			if isequal(pb, arm.end_pb)
-				new_state = 'return';
-    		end
-		end
-
-		% Do state change actions
-		if strcmp(new_state, 'return')
+	    arm = state.trial.name;
+		if isequal(pb, arm.pb)
 			fireFeeder(expt.feeder_port, arm.feeder.pin, expt.feeder.n_pellets);
 			NlxSendCommand(sprintf('-PostEvent "feeder %s" 0 0', arm.feeder.name));
-			NlxSendCommand(sprintf('-PostEvent "entering %s state" 0 0', new_state));
-			state.state = new_state;
 			finished = 1;
-		elseif strcmp(new_state, 'approach')
-			NlxSendCommand(sprintf('-PostEvent "entering %s state" 0 0', new_state));
-
 			% Update trial outcome totals
-			approaching = approaching - 1;
-			state.state = new_state;
+			state.trial = state.trial - 1;
 		end
 
 		seconds = toc(state.timer);
