@@ -21,7 +21,7 @@ end
 disp('Initializing settings');
 
 expt.photobeam_port = 1; % TTLInputPort
-expt.feeder_port = 2; % TTLOutputPort
+expt.feeder_port = 0; % TTLOutputPort
 
 % Arms
 expt.north.name = 'North';
@@ -36,7 +36,7 @@ expt.east.pb.pin = 2^5;
 expt.east.pb.name = 'EastPB';
 
 expt.south.pb.pin = 2^6;
-expt.south.pb.name = 'SouthStartPB';
+expt.south.pb.name = 'SouthPB';
 
 expt.photobeams = {expt.north.pb, expt.east.pb,	expt.south.pb};
 
@@ -58,6 +58,9 @@ expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 % phase parameters
 phase.name = 'training';
 phase.n = 20;
+phase.north = phase.n;
+phase.east = phase.n * 2;
+phase.south = phase.n;
 phase.template = {};
 phase.total = phase.north+phase.east+phase.south;
 phase.north_first = 0;

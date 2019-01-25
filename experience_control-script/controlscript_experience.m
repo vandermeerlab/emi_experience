@@ -29,7 +29,6 @@ expt.south.name = 'South';
 expt.west.name = 'West';
 
 % Photobeams
-
 expt.north.start_pb.pin = 2^0;
 expt.north.start_pb.name = 'NorthStartPB';
 expt.north.end_pb.pin = 2^1;
