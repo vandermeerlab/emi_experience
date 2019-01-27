@@ -5,12 +5,21 @@ function state = initDisplay(state)
 
 	% annotation dim = [x y w h]
 
-	state.display.template = annotation('textbox', [0.05, 0.05, 0.2, 0.9]);
-	set(state.display.template, 'String', 'Template');
-	set(state.display.template, 'FitBoxToText', 'off');
-	set(state.display.template, 'FontSize', 6);
-	set(state.display.template, 'HorizontalAlignment', 'center'); % left center right
-	set(state.display.template, 'VerticalAlignment', 'middle'); % top middle bottom
+	state.display.template_a = annotation('textbox', [0.05, 0.05, 0.2, 0.9]);
+	set(state.display.template_a, 'String', 'Template');
+	set(state.display.template_a, 'FitBoxToText', 'off');
+	set(state.display.template_a, 'FontSize', 14);
+	set(state.display.template_a, 'HorizontalAlignment', 'left'); % left center right
+	set(state.display.template_a, 'VerticalAlignment', 'middle'); % top middle bottom
+
+	state.display.template_b = annotation('textarrow', [0.15, 0.05, 0.1, 0.9]);
+	set(state.display.template_b, 'String', 'Template');
+	set(state.display.template_b, 'FitBoxToText', 'off');
+	set(state.display.template_b, 'FontSize', 14);
+	set(state.display.template_b, 'HorizontalAlignment', 'left'); % left center right
+	set(state.display.template_b, 'VerticalAlignment', 'middle'); % top middle bottom
+	set(state.display.template_b, 'LineStyle', 'none')
+	set(state.display.template_b, 'HeadStyle', 'none')
 
 	state.display.status = annotation('textbox', [0.3, 0.75, 0.65, 0.2]);
 	set(state.display.status, 'String', 'Status');
