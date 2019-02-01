@@ -116,7 +116,7 @@ phase3.template = {};
 phase3.total = phase3.high+phase3.medium+phase3.low+phase3.control;
 
 % Make the tone cue
-SoundVolume(1.0); % Set speaker volume to max (1.0)
+SoundVolume(0.5); % Set speaker volume to half max (0.5)
 expt.tone_duration = 2;
 expt.tone_frequency = 880;
 expt.tone = makeTone(expt.tone_duration, expt.tone_frequency);
@@ -128,8 +128,10 @@ for i=1:length(expt.feeders)
 	fireFeeder(expt.feeder_port, f.pin, expt.feeder.n_pellets);
 end
 
-%% Run maze
+%% Check the tone
+play(expt.tone)
 
+%% Run maze
 % Running state
 state.timer = tic();
 state.high.name = 'High';

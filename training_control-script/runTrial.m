@@ -1,7 +1,7 @@
 function [expt, phase, state] = runTrial(expt, phase, state)
 
 	disp(sprintf('Starting trial %d', state.n));
-	NlxSendCommand(sprintf('-PostEvent "starting trial %d" 0 0', state.n));
+	NlxSendCommand(sprintf('-PostEvent "trial start" 0 0'));
 	finished = 0;
 
 	while ~finished && toc(state.timer) < expt.max_time
@@ -43,5 +43,5 @@ function [expt, phase, state] = runTrial(expt, phase, state)
         drawnow;
     end
     
-	NlxSendCommand(sprintf('-PostEvent "end of trial %d" 0 0', state.n));
+	NlxSendCommand(sprintf('-PostEvent "trial end" 0 0'));
 end
