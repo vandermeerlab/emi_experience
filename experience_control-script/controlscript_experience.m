@@ -101,7 +101,7 @@ phase2.medium = 9;
 phase2.low = 2;
 phase2.control = 9;
 phase2.highlow_first = expt.highlow_first;
-phase2.probe_highlow_first = expt.probe_highlow_first; % or ~probe_highlow_first or whatever
+phase2.probe_highlow_first = expt.probe_highlow_first; % or ~probe_highlow_first
 phase2.template = {};
 phase2.total = phase2.high+phase2.medium+phase2.low+phase2.control;
 
@@ -116,6 +116,7 @@ phase3.template = {};
 phase3.total = phase3.high+phase3.medium+phase3.low+phase3.control;
 
 % Make the tone cue
+SoundVolume(1.0); % Set speaker volume to max (1.0)
 expt.tone_duration = 2;
 expt.tone_frequency = 880;
 expt.tone = makeTone(expt.tone_duration, expt.tone_frequency);
