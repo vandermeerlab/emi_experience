@@ -1,3 +1,8 @@
+%% Set up path
+restoredefaultpath;
+addpath('C:\Program Files\Neuralynx\NetComDevelopmentPackage_v3.1.0\MATLAB_M-files');
+addpath('C:\Users\mvdmlab\Documents\GitHub\mvdmlab-tasks\emi_experience\experience_control-script')
+
 %% Reset & connect to Cheetah
 clear all;
 
@@ -153,10 +158,15 @@ for i=1:length(phases)
     
 	verifyTrial(expt, phase, state);
 	if phase.name == num2str(length(phases))
+		set(state.display.trial, 'String', '');
 		set(state.display.messages, 'String', sprintf('End of phase %s. Running phases are finished for this session.', phase.name));
 	else
+		set(state.display.trial, 'String', '');
 		set(state.display.messages, 'String', sprintf('End of phase %s. Press a key or mouse button to continue.', phase.name));
 		waitforbuttonpress();
 	end
 	drawnow;
 end
+
+filename = sprintf('%s_experience.png', datestr(datetime('now'), 'yyyy-mm-dd'));
+saveas(state.display.fig, ['C:\Users\mvdmlab\Documents\GitHub\mvdmlab-tasks\emi_experience\experience_control-script\daily\', filename]);

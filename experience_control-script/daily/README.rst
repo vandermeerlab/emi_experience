@@ -1,0 +1,1 @@
+Daily screenshots of the maze display
