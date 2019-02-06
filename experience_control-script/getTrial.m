@@ -64,7 +64,7 @@ function [expt, phase, state] = getTrial(expt, phase, state)
 	set(state.display.template, 'String', display_template);
 
 	% Trial
-	lines = cell(1, 2);
+	lines = cell(1, 3);
 	if strcmp(state.trial, 'Probe-HighLow')
 		high = expt.outcome2arm('High').name;
 		low = expt.outcome2arm('Low').name;
@@ -72,12 +72,12 @@ function [expt, phase, state] = getTrial(expt, phase, state)
 	elseif strcmp(state.trial, 'Probe-Mediums')
 		medium = expt.outcome2arm('Medium').name;
 		control = expt.outcome2arm('Control').name;
-		lines{1} = sprintf('Probe trial, %s vs %s', medium, control);
+		lines{1} = sprintf('Probe trial: %s vs %s', medium, control);
 	else
 		arm = expt.outcome2arm(state.trial.name).name;
-		lines{1} = sprintf('Forced trial, %s', arm);
+		lines{1} = sprintf('Forced trial: %s', arm);
 	end
-	lines{2} = sprintf('Rewarded: %d \t Tone: %d', state.rewarded, state.tone);
+	lines{3} = sprintf('Rewarded: %d \t Tone: %d', state.rewarded, state.tone);
 	set(state.display.trial, 'String', lines);
     
     drawnow;

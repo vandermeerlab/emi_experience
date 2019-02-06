@@ -15,21 +15,21 @@ function state = initDisplay(state)
 	state.display.status = annotation('textbox', [0.3, 0.75, 0.65, 0.2]);
 	set(state.display.status, 'String', 'Status');
 	set(state.display.status, 'FitBoxToText', 'off');
-	set(state.display.status, 'FontSize', 16);
+	set(state.display.status, 'FontSize', 20);
 	set(state.display.status, 'HorizontalAlignment', 'center');
 	set(state.display.status, 'VerticalAlignment', 'middle');
 
 	state.display.trial = annotation('textbox', [0.3, 0.35, 0.65, 0.3]);
 	set(state.display.trial, 'String', 'Trial');
 	set(state.display.trial, 'FitBoxToText', 'off');
-	set(state.display.trial, 'FontSize', 18);
+	set(state.display.trial, 'FontSize', 30);
 	set(state.display.trial, 'HorizontalAlignment', 'center');
 	set(state.display.trial, 'VerticalAlignment', 'middle');
 
 	state.display.messages = annotation('textbox', [0.3, 0.05, 0.65, 0.2]);
 	set(state.display.messages, 'String', 'Messages');
 	set(state.display.messages, 'FitBoxToText', 'off');
-	set(state.display.messages, 'FontSize', 16);
+	set(state.display.messages, 'FontSize', 20);
 	set(state.display.messages, 'HorizontalAlignment', 'center');
 	set(state.display.messages, 'VerticalAlignment', 'middle');
     set(state.display.messages, 'Color', 'red');

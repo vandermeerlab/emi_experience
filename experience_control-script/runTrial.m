@@ -26,8 +26,8 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 
 	    % Determine state changes
 	    new_state = '';
-	    if state.state == 'return'
-	    	if strcmp(state.trial, 'Probe_HighLow')
+	    if strcmp(state.state, 'return')
+	    	if strcmp(state.trial, 'Probe-HighLow')
 	    		arm = expt.outcome2arm('High');
     			if isequal(pb, arm.start_pb)
     				new_state = 'approach';
@@ -39,7 +39,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
     					approaching = state.low;
                     end
     			end
-	    	elseif strcmp(state.trial, 'Probe_Mediums')
+	    	elseif strcmp(state.trial, 'Probe-Mediums')
 	    		arm = expt.outcome2arm('Medium');
     			if isequal(pb, arm.start_pb)
     				new_state = 'approach';
@@ -59,8 +59,8 @@ function [expt, phase, state] = runTrial(expt, phase, state)
     			end
     		end
     	else
-    		assert(state.state, 'approach');
-	    	if strcmp(state.trial, 'Probe_HighLow')
+    		assert(strcmp(state.state, 'approach'));
+	    	if strcmp(state.trial, 'Probe-HighLow')
 	    		arm = expt.outcome2arm('High');
     			if isequal(pb, arm.end_pb)
     				new_state = 'return';
@@ -70,7 +70,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
     					new_state = 'return';
                     end
     			end
-	    	elseif strcmp(state.trial, 'Probe_Mediums')
+	    	elseif strcmp(state.trial, 'Probe-Mediums')
 	    		arm = expt.outcome2arm('Medium');
     			if isequal(pb, arm.end_pb)
     				new_state = 'return';
