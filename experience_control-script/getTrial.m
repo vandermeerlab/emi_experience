@@ -62,16 +62,18 @@ function [expt, phase, state] = getTrial(expt, phase, state)
 	display_template = phase.template(1:end);
 	display_template{state.n} = ['\bf ', display_template{state.n}, ' \rm'];
 	set(state.display.template, 'String', display_template);
-
+    
+    high = expt.outcome2arm('High').name;
+	low = expt.outcome2arm('Low').name;
+    medium = expt.outcome2arm('Medium').name;
+	control = expt.outcome2arm('Control').name;
+        
 	% Trial
 	lines = cell(1, 3);
 	if strcmp(state.trial, 'Probe-HighLow')
-		high = expt.outcome2arm('High').name;
-		low = expt.outcome2arm('Low').name;
+		
 		lines{1} = sprintf('Probe trial, %s vs %s', high, low);
 	elseif strcmp(state.trial, 'Probe-Mediums')
-		medium = expt.outcome2arm('Medium').name;
-		control = expt.outcome2arm('Control').name;
 		lines{1} = sprintf('Probe trial: %s vs %s', medium, control);
 	else
 		arm = expt.outcome2arm(state.trial.name).name;
@@ -79,6 +81,14 @@ function [expt, phase, state] = getTrial(expt, phase, state)
 	end
 	lines{3} = sprintf('Rewarded: %d \t Tone: %d', state.rewarded, state.tone);
 	set(state.display.trial, 'String', lines);
+    
+    % Trial
+	lines = cell(1, 4);
+    lines{1} = sprintf('%s: %d', high, state.high.rewarded + state.high.unrewarded);
+    lines{2} = sprintf('%s: %d', low, state.low.rewarded + state.low.unrewarded);
+    lines{3} = sprintf('%s: %d', medium, state.medium.rewarded + state.medium.unrewarded);
+    lines{4} = sprintf('%s: %d', control, state.control.rewarded + state.control.unrewarded);
+    set(state.display.messages, 'String', lines);
     
     drawnow;
 end

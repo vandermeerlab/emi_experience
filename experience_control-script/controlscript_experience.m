@@ -164,9 +164,13 @@ for i=1:length(phases)
 	verifyTrial(phase, state);
 	if phase.name == num2str(length(phases))
 		set(state.display.trial, 'String', '');
+        set(state.display.messages, 'HorizontalAlignment', 'center');
+        set(state.display.messages, 'Color', 'red');
 		set(state.display.messages, 'String', sprintf('End of phase %s. Running phases are finished for this session.', phase.name));
 	else
 		set(state.display.trial, 'String', '');
+        set(state.display.messages, 'HorizontalAlignment', 'center');
+        set(state.display.messages, 'Color', 'red');
 		set(state.display.messages, 'String', sprintf('End of phase %s. Press a key or mouse button to continue.', phase.name));
 		waitforbuttonpress();
 	end

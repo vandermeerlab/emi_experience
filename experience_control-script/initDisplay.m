@@ -30,9 +30,8 @@ function state = initDisplay(state)
 	set(state.display.messages, 'String', 'Messages');
 	set(state.display.messages, 'FitBoxToText', 'off');
 	set(state.display.messages, 'FontSize', 20);
-	set(state.display.messages, 'HorizontalAlignment', 'center');
+	set(state.display.messages, 'HorizontalAlignment', 'right');
 	set(state.display.messages, 'VerticalAlignment', 'middle');
-    set(state.display.messages, 'Color', 'red');
 
 	axis off;
 end

@@ -114,7 +114,9 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 				approaching.unrewarded = approaching.unrewarded - 1;
 			end
 			state.state = new_state;
-		end
+        end
+        
+        
 
 		seconds = toc(state.timer);
 		time.hours = floor(seconds / (60 * 60));
@@ -123,9 +125,19 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 
 	    set(state.display.status, 'String', ...
 	    	sprintf('Time %02.0f:%02.0f:%02.0f \t Phase %s \t State: %s', time.hours, time.minutes, time.seconds, phase.name, state.state));
-
+    
 		drawnow;
-	end
+    end
+    
+    if strcmp(approaching.name, 'High')
+        state.high = approaching;
+    elseif strcmp(approaching.name, 'Low')
+        state.low = approaching;
+    elseif strcmp(approaching.name, 'Medium')
+        state.medium = approaching;
+    elseif strcmp(approaching.name, 'Control')
+        state.control = approaching;
+    end
 
 	NlxSendCommand(sprintf('-PostEvent "trial end" 0 0'));
 
