@@ -7,9 +7,9 @@ function rewarded = isRewarded(outcome, probed, reward_prob)
 		min_unrewarded = 1;
 	end
 
-	if outcome.rewarded == min_rewarded
+	if outcome.rewarded < min_rewarded
 		rewarded = 0;
-	elseif outcome.unrewarded == min_unrewarded
+	elseif outcome.unrewarded < min_unrewarded
 		rewarded = 1;
 	else
 		rewarded = rand() < reward_prob;

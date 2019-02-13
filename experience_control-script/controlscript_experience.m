@@ -166,12 +166,12 @@ for i=1:length(phases)
 		set(state.display.trial, 'String', '');
         set(state.display.messages, 'HorizontalAlignment', 'center');
         set(state.display.messages, 'Color', 'red');
-		set(state.display.messages, 'String', sprintf('End of phase %s. Running phases are finished for this session.', phase.name));
+		set(state.display.messages, 'String', sprintf('End of phase %s. \n Running phases are finished for this session.', phase.name));
 	else
 		set(state.display.trial, 'String', '');
         set(state.display.messages, 'HorizontalAlignment', 'center');
         set(state.display.messages, 'Color', 'red');
-		set(state.display.messages, 'String', sprintf('End of phase %s. Press a key or mouse button to continue.', phase.name));
+		set(state.display.messages, 'String', sprintf('End of phase %s. \n Press a key or mouse button to continue.', phase.name));
 		waitforbuttonpress();
 	end
 	drawnow;

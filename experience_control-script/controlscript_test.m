@@ -86,30 +86,30 @@ expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 
 % phase parameters
 phase1.name = '1';
-phase1.high = 2;
-phase1.medium = 2;
-phase1.low = 2;
-phase1.control = 2;
+phase1.high = 4;
+phase1.medium = 4;
+phase1.low = 4;
+phase1.control = 4;
 phase1.highlow_first = expt.highlow_first;
 phase1.probe_highlow_first = expt.probe_highlow_first;
 phase1.template = {};
 phase1.total = phase1.high+phase1.medium+phase1.low+phase1.control;
 
 phase2.name = '2';
-phase2.high = 2;
-phase2.medium = 2;
-phase2.low = 2;
-phase2.control = 2;
+phase2.high = 4;
+phase2.medium = 4;
+phase2.low = 4;
+phase2.control = 4;
 phase2.highlow_first = expt.highlow_first;
 phase2.probe_highlow_first = expt.probe_highlow_first; % or ~probe_highlow_first
 phase2.template = {};
 phase2.total = phase2.high+phase2.medium+phase2.low+phase2.control;
 
 phase3.name = '3';
-phase3.high = 3;
-phase3.medium = 3;
-phase3.low = 3;
-phase3.control = 3;
+phase3.high = 4;
+phase3.medium = 4;
+phase3.low = 4;
+phase3.control = 4;
 phase3.highlow_first = expt.highlow_first;
 phase3.probe_highlow_first = expt.probe_highlow_first;
 phase3.template = {};

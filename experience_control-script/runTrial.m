@@ -101,9 +101,10 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 			if state.tone
 				play(expt.tone);
 				NlxSendCommand(sprintf('-PostEvent "tone on" 0 0'));
-				if isequal(approaching, state.control)
-					state.control.tones = state.control.tones - 1;
-				end
+                approaching.tones = approaching.tones - 1;
+% 				if isequal(approaching, state.control)
+% 					state.control.tones = state.control.tones - 1;
+% 				end
 			end
 			NlxSendCommand(sprintf('-PostEvent "entering %s state" 0 0', new_state));
 
