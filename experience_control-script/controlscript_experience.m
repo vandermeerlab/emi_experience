@@ -24,6 +24,8 @@ end
 %% Initialize settings for photobeams and feeders
 disp('Initializing settings');
 
+expt.path = 'C:\\Users\\mvdmlab\\Documents\\GitHub\\mvdmlab-tasks\\emi_experience\\experience_control-script\\daily\\';
+expt.name = sprintf('%s_experience', datestr(datetime('now'), 'yyyy-mm-dd'));
 expt.photobeam_port = 1; % TTLInputPort
 expt.feeder_port = 2; % TTLOutputPort
 
@@ -145,6 +147,7 @@ state.control.carryover = '';
 state.low.name = 'Low';
 state.low.carryover = '';
 state.display = [];
+state.log = fopen([expt.path, expt.name, '.txt'], 'w');
 
 state = initDisplay(state);
 
@@ -160,7 +163,7 @@ for i=1:length(phases)
 		[expt, phase, state] = getTrial(expt, phase, state);
 		[expt, phase, state] = runTrial(expt, phase, state);
 	end
-    
+
 	verifyTrial(phase, state);
 	if phase.name == num2str(length(phases))
 		set(state.display.trial, 'String', '');
@@ -173,9 +176,10 @@ for i=1:length(phases)
         set(state.display.messages, 'Color', 'red');
 		set(state.display.messages, 'String', sprintf('End of phase %s. \n Press a key or mouse button to continue.', phase.name));
 		waitforbuttonpress();
+		fprintf(state.log, '\n');
 	end
 	drawnow;
 end
 
-filename = sprintf('%s_experience.png', datestr(datetime('now'), 'yyyy-mm-dd'));
-saveas(state.display.fig, ['C:\Users\mvdmlab\Documents\GitHub\mvdmlab-tasks\emi_experience\experience_control-script\daily\', filename]);
+saveas(state.display.fig, [expt.path, expt.name, '.png']);
+fclose(state.log);

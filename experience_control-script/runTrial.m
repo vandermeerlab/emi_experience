@@ -116,8 +116,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 			end
 			state.state = new_state;
         end
-        
-        
+
 
 		seconds = toc(state.timer);
 		time.hours = floor(seconds / (60 * 60));
@@ -140,6 +139,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
         state.control = approaching;
     end
 
-	NlxSendCommand(sprintf('-PostEvent "trial end" 0 0'));
+    fprintf(state.log, '%s\n', arm.name);
 
+	NlxSendCommand(sprintf('-PostEvent "trial end" 0 0'));
 end

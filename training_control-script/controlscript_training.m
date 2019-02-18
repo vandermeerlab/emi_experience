@@ -25,6 +25,9 @@ end
 %% Initialize settings for photobeams and feeders
 disp('Initializing settings');
 
+expt.path = 'C:\\Users\\admin\\Documents\\CheetahControlScripts\\Emily\\training_control-script\\daily\\';
+expt.name = sprintf('%s_tmaze', datestr(datetime('now'), 'yyyy-mm-dd'));
+
 expt.photobeam_port = 1; % TTLInputPort
 expt.feeder_port = 0; % TTLOutputPort
 
@@ -83,6 +86,8 @@ for i=1:length(expt.feeders)
 	fireFeeder(expt.feeder_port, f.pin, expt.feeder.n_pellets);
 end
 
+state.log = fopen([expt.path, expt.name, '.txt'], 'w');
+
 %% Run maze
 % Running state
 state.timer = tic();
@@ -105,5 +110,5 @@ set(state.display.trial, 'String', '');
 set(state.display.messages, 'String', sprintf('End of %s.\nRunning phases are finished for this session.', phase.name));
 drawnow;
 
-filename = sprintf('%s_tmaze.png', datestr(datetime('now'), 'yyyy-mm-dd'));
-saveas(state.display.fig, ['C:\Users\admin\Documents\CheetahControlScripts\Emily\training_control-script\daily\', filename]);
+saveas(state.display.fig, [expt.path, expt.name, '.png']);
+fclose(state.log);
