@@ -139,7 +139,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
         state.control = approaching;
     end
 
-    fprintf(state.log, '%s\n', arm.name);
+    fprintf(state.log, '%s \n', arm.name);
 
 	NlxSendCommand(sprintf('-PostEvent "trial end" 0 0'));
 end

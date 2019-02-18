@@ -79,14 +79,14 @@ phase.template = {};
 phase.total = phase.north+phase.east+phase.south;
 phase.north_first = 1;
 
+state.log = fopen([expt.path, expt.name, '.txt'], 'wt');
+
 %% Check feeders
 for i=1:length(expt.feeders)
 	f = expt.feeders{i};
 	disp(['Firing ', f.name, ' (', num2str(expt.feeder.n_pellets), ' pellets) ...']);
 	fireFeeder(expt.feeder_port, f.pin, expt.feeder.n_pellets);
 end
-
-state.log = fopen([expt.path, expt.name, '.txt'], 'w');
 
 %% Run maze
 % Running state

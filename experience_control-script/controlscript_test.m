@@ -147,7 +147,7 @@ state.control.carryover = '';
 state.low.name = 'Low';
 state.low.carryover = '';
 state.display = [];
-state.log = fopen([expt.path, expt.name, '.txt'], 'w');
+state.log = fopen([expt.path, expt.name, '.txt'], 'wt');
 
 state = initDisplay(state);
 
