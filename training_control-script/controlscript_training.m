@@ -1,7 +1,7 @@
 %% Set up path
 restoredefaultpath;
-addpath('C:\Users\admin\Documents\netcom\Matlab_M-files');
-addpath('C:\Users\admin\Documents\CheetahControlScripts\Emily\training_control-script');
+addpath('C:\Users\admin\\Documents\\netcom\\Matlab_M-files');
+addpath('C:\Users\admin\\Documents\\CheetahControlScripts\\Emily\\training_control-script');
 
 %% Reset & connect to Cheetah
 clear all;
@@ -71,13 +71,13 @@ expt.outcome2arm('South') = expt.south;
 
 % phase parameters
 phase.name = 'training';
-phase.n = 20;
+phase.n = 10;
 phase.north = phase.n;
 phase.east = phase.n * 2;
 phase.south = phase.n;
 phase.template = {};
 phase.total = phase.north+phase.east+phase.south;
-phase.north_first = 1;
+phase.north_first = 0;
 
 state.log = fopen([expt.path, expt.name, '.txt'], 'wt');
 
@@ -103,6 +103,7 @@ set(state.display.messages, 'String', '');
 while state.n < phase.total
     [phase, state] = getTrial(phase, state);
     [expt, phase, state] = runTrial(expt, phase, state);
+    saveas(state.display.fig, [expt.path, expt.name, '.png']);
 end
 
 verifyTrial(phase, state);
@@ -110,5 +111,4 @@ set(state.display.trial, 'String', '');
 set(state.display.messages, 'String', sprintf('End of %s.\nRunning phases are finished for this session.', phase.name));
 drawnow;
 
-saveas(state.display.fig, [expt.path, expt.name, '.png']);
 fclose(state.log);

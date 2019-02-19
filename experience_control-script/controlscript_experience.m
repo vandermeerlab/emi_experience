@@ -1,7 +1,7 @@
 %% Set up path
 restoredefaultpath;
-addpath('C:\Program Files\Neuralynx\NetComDevelopmentPackage_v3.1.0\MATLAB_M-files');
-addpath('C:\Users\mvdmlab\Documents\GitHub\mvdmlab-tasks\emi_experience\experience_control-script')
+addpath('C:\\Program Files\\Neuralynx\\NetComDevelopmentPackage_v3.1.0\\MATLAB_M-files');
+addpath('C:\\Users\\mvdmlab\\Documents\\GitHub\\mvdmlab-tasks\\emi_experience\\experience_control-script')
 
 %% Reset & connect to Cheetah
 clear all;
@@ -179,7 +179,7 @@ for i=1:length(phases)
 		fprintf(state.log, '\n');
 	end
 	drawnow;
+	saveas(state.display.fig, [expt.path, expt.name, '_phase', i, '.png']);
 end
 
-saveas(state.display.fig, [expt.path, expt.name, '.png']);
 fclose(state.log);
