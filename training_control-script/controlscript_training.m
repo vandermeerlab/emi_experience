@@ -50,6 +50,7 @@ expt.photobeams = {expt.north.pb, expt.east.pb,	expt.south.pb};
 
 % Feeders
 expt.feeder.n_pellets = 2;
+expt.feeder.prob = 1.0;
 
 expt.north.feeder.name = 'NorthFeeder';
 expt.north.feeder.pin = 4;
@@ -101,7 +102,7 @@ state.n = 0;
 set(state.display.messages, 'String', '');
 
 while state.n < phase.total
-    [phase, state] = getTrial(phase, state);
+    [phase, state] = getTrial(phase, state, expt.feeder.prob);
     [expt, phase, state] = runTrial(expt, phase, state);
     saveas(state.display.fig, [expt.path, expt.name, '.png']);
 end

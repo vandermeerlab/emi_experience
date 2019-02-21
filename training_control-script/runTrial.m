@@ -26,9 +26,13 @@ function [expt, phase, state] = runTrial(expt, phase, state)
             arm = expt.outcome2arm(state.trial);
 
             if isequal(pb, arm.pb)
-                fireFeeder(expt.feeder_port, arm.feeder.pin, expt.feeder.n_pellets);
-                NlxSendCommand(sprintf('-PostEvent "firing feeder %s" 0 0', arm.feeder.name));
-                finished = 1;
+                if state.rewarded
+                    fireFeeder(expt.feeder_port, arm.feeder.pin, expt.feeder.n_pellets);
+                    NlxSendCommand(sprintf('-PostEvent "firing feeder %s" 0 0', arm.feeder.name));
+                    finished = 1;
+                else
+                    finished = 1;
+                end
             end
         end
 

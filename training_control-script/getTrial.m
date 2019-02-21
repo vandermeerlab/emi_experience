@@ -1,10 +1,12 @@
-function [phase, state] = getTrial(phase, state)
+function [phase, state] = getTrial(phase, state, reward_prob)
 	%  Selects next trial given a template of all trials
     
 	state.n = state.n + 1;
 	state.last_pb_state = 0;
 
 	state.trial = phase.template{state.n};
+
+	state.rewarded = rand() < reward_prob;
 
 	% Update display template
 	display_template = phase.template(1:end);
