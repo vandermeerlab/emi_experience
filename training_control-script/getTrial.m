@@ -15,7 +15,7 @@ function [phase, state] = getTrial(phase, state, reward_prob)
 	halfway_idx = ceil(length(display_template)/2);
 
 	set(state.display.template_a, 'String', display_template(1:halfway_idx));
-	set(state.display.template_b, 'String', display_template(halfway_idx:end));
+	set(state.display.template_b, 'String', display_template(halfway_idx+1:end));
 
 	% Update display trial
 	set(state.display.trial, 'String', sprintf('Forced trial, %s', state.trial));
