@@ -72,12 +72,13 @@ expt.outcome2arm('South') = expt.south;
 
 % phase parameters
 phase.name = 'training';
-phase.n = 10;
+phase.n = 20;
 phase.north = phase.n;
 phase.east = phase.n * 2;
 phase.south = phase.n;
 phase.template = {};
 phase.total = phase.north+phase.east+phase.south;
+phase.ordered = 1;
 phase.north_first = 0;
 
 state.log = fopen([expt.path, expt.name, '.txt'], 'wt');
