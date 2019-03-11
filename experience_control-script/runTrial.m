@@ -92,7 +92,9 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 		if strcmp(new_state, 'return')
 			if state.rewarded
 				fireFeeder(expt.feeder_port, arm.feeder.pin, expt.feeder.n_pellets);
-				NlxSendCommand(sprintf('-PostEvent "feeder %s" 0 0', arm.feeder.name));
+				NlxSendCommand(sprintf('-PostEvent "firing feeder %s" 0 0', arm.feeder.name));
+            else
+                NlxSendCommand(sprintf('-PostEvent "NOT firing feeder %s" 0 0', arm.feeder.name));
 			end
 			NlxSendCommand(sprintf('-PostEvent "entering %s state" 0 0', new_state));
 			state.state = new_state;

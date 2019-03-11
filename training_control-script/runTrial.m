@@ -31,6 +31,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
                     NlxSendCommand(sprintf('-PostEvent "firing feeder %s" 0 0', arm.feeder.name));
                     finished = 1;
                 else
+                	NlxSendCommand(sprintf('-PostEvent "NOT firing feeder %s" 0 0', arm.feeder.name));
                     finished = 1;
                 end
             end
