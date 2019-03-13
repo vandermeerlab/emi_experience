@@ -179,7 +179,7 @@ for i=1:length(phases)
 		fprintf(state.log, '\n');
 	end
 	drawnow;
-	saveas(state.display.fig, [expt.path, expt.name, '_phase', i, '.png']);
+	saveas(state.display.fig, [expt.path, expt.name, '_phase', num2str(i), '.png']);
 end
 
 fclose(state.log);
