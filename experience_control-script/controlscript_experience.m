@@ -82,7 +82,7 @@ expt.outcome2arm('Medium') = expt.north;
 expt.outcome2arm('Control') = expt.south;
 
 % Trial parameters
-expt.highlow_first = 0;
+expt.highlow_first = 1;
 expt.probe_highlow_first = 0;
 expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 
@@ -90,8 +90,9 @@ expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 phase1.name = '1';
 phase1.high = 15;
 phase1.medium = 9;
-phase1.low = 2;
+phase1.low = 3;
 phase1.control = 9;
+phase1.n_each_probe = 2;
 phase1.highlow_first = expt.highlow_first;
 phase1.probe_highlow_first = expt.probe_highlow_first;
 phase1.template = {};
@@ -100,22 +101,13 @@ phase1.total = phase1.high+phase1.medium+phase1.low+phase1.control;
 phase2.name = '2';
 phase2.high = 15;
 phase2.medium = 9;
-phase2.low = 2;
+phase2.low = 3;
 phase2.control = 9;
+phase2.n_each_probe = 2;
 phase2.highlow_first = expt.highlow_first;
 phase2.probe_highlow_first = expt.probe_highlow_first; % or ~probe_highlow_first
 phase2.template = {};
 phase2.total = phase2.high+phase2.medium+phase2.low+phase2.control;
-
-phase3.name = '3';
-phase3.high = 16;
-phase3.medium = 8;
-phase3.low = 2;
-phase3.control = 8;
-phase3.highlow_first = expt.highlow_first;
-phase3.probe_highlow_first = expt.probe_highlow_first;
-phase3.template = {};
-phase3.total = phase3.high+phase3.medium+phase3.low+phase3.control;
 
 % Make the tone cue
 SoundVolume(0.5); % Set speaker volume to half max (0.5)
@@ -137,7 +129,6 @@ play(expt.tone)
 disp('Start of experience maze experiment');
 
 % Running state
-state.timer = tic();
 state.high.name = 'High';
 state.high.carryover = '';
 state.medium.name = 'Medium';
@@ -151,9 +142,11 @@ state.log = fopen([expt.path, expt.name, '.txt'], 'wt');
 
 state = initDisplay(state);
 
-phases = {phase1, phase2, phase3};
+phases = {phase1, phase2};
 for i=1:length(phases)
-	phase = phases{i};
+    phase = phases{i};
+    
+    state.timer = tic();
     state.n = 0;
     
 	set(state.display.messages, 'String', '');
@@ -172,13 +165,13 @@ for i=1:length(phases)
 		set(state.display.messages, 'String', sprintf('End of phase %s. \n Running phases are finished for this session.', phase.name));
 	else
 		set(state.display.trial, 'String', '');
-        set(state.display.messages, 'HorizontalAlignment', 'center');
         set(state.display.messages, 'Color', 'red');
 		set(state.display.messages, 'String', sprintf('End of phase %s. \n Press a key or mouse button to continue.', phase.name));
 		waitforbuttonpress();
 		fprintf(state.log, '\n');
 	end
 	drawnow;
+    set(state.display.fig, 'PaperPositionMode', 'auto');
 	saveas(state.display.fig, [expt.path, expt.name, '_phase', num2str(i), '.png']);
 end
 

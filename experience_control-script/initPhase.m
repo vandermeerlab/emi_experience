@@ -1,4 +1,6 @@
 function [expt, phase, state] = initPhase(expt, phase, state)
+    assert(phase.low > phase.n_each_probe)
+    
 	state.n = 0;
 	state.rewarded = 0;
 	state.tone = 0;
@@ -17,31 +19,78 @@ function [expt, phase, state] = initPhase(expt, phase, state)
     else
 		phase.template(1:2:end) = {'Mediums'};
 		phase.template(2:2:end) = {'HighLow'};
-	end
-
-	probe.first = floor(phase.total/3);
-	probe.second = probe.first * 2;
-	if phase.probe_highlow_first
-		probe.first_choice = 'HighLow';
-		probe.second_choice = 'Mediums';
-	else
-		probe.first_choice = 'Mediums';
-		probe.second_choice = 'HighLow';
     end
     
-	if ~strcmp(phase.template{probe.first}, {probe.first_choice})
-		probe.first = probe.first + 1;
-	end
-	assert(strcmp(phase.template(probe.first), {probe.first_choice}));
-	phase.template(probe.first) = {strcat('Probe-', probe.first_choice)};
-	if ~strcmp(phase.template{probe.second}, {probe.second_choice})
-		probe.second = probe.second + 1;
-	end
-	assert(strcmp(phase.template(probe.second), {probe.second_choice}));
-	phase.template(probe.second) = {strcat('Probe-', probe.second_choice)};
+    probe.n = phase.n_each_probe * 2;
+    probe_idx = floor(phase.total/(probe.n+1));
+    
+    for i=1:probe.n % there's got to be a better way to do this logic...
+        idx = probe_idx * i;
+        if phase.highlow_first
+            if phase.probe_highlow_first
+                if rem(i, 2) % if i is odd
+                    if rem(idx, 2) % make sure that idx is odd
+                        phase.template{idx} = 'Probe-HighLow';
+                    else
+                        phase.template{idx-1} = 'Probe-HighLow';
+                    end
+                else % if i is even
+                    if ~rem(idx, 2) % make sure that idx is even
+                        phase.template{idx} = 'Probe-Mediums';
+                    else
+                        phase.template{idx-1} = 'Probe-Mediums';
+                    end
+                end
+            else
+                if ~rem(i, 2) % if i is even
+                    if rem(idx, 2) % make sure that idx is odd
+                        phase.template{idx} = 'Probe-HighLow';
+                    else
+                        phase.template{idx-1} = 'Probe-HighLow';
+                    end
+                else % if i is odd
+                    if ~rem(idx, 2) % make sure that idx is even
+                        phase.template{idx} = 'Probe-Mediums';
+                    else
+                        phase.template{idx-1} = 'Probe-Mediums';
+                    end
+                end
+            end
+        else
+            if phase.probe_highlow_first
+                if rem(i, 2) % if i is odd
+                    if ~rem(idx, 2) % make sure that idx is even
+                        phase.template{idx} = 'Probe-HighLow';
+                    else
+                        phase.template{idx-1} = 'Probe-HighLow';
+                    end
+                else % if i is even
+                    if rem(idx, 2) % make sure that idx is odd
+                        phase.template{idx} = 'Probe-Mediums';
+                    else
+                        phase.template{idx-1} = 'Probe-Mediums';
+                    end
+                end
+            else
+                if ~rem(i, 2) % if i is even
+                    if ~rem(idx, 2) % make sure that idx is even
+                        phase.template{idx} = 'Probe-HighLow';
+                    else
+                        phase.template{idx-1} = 'Probe-HighLow';
+                    end
+                else % if i is odd
+                    if rem(idx, 2) % make sure that idx is odd
+                        phase.template{idx} = 'Probe-Mediums';
+                    else
+                        phase.template{idx-1} = 'Probe-Mediums';
+                    end
+                end
+            end
+        end
+    end
 
-	assert(sum(ismember(phase.template, {'HighLow'})) == phase.high + phase.low - 1);
-	assert(sum(ismember(phase.template, {'Mediums'})) == phase.medium + phase.control - 1);
-	assert(sum(ismember(phase.template, {'Probe-HighLow'})) == 1);
-	assert(sum(ismember(phase.template, {'Probe-Mediums'})) == 1);
+	assert(sum(ismember(phase.template, {'HighLow'})) == phase.high + phase.low - phase.n_each_probe);
+	assert(sum(ismember(phase.template, {'Mediums'})) == phase.medium + phase.control - phase.n_each_probe);
+	assert(sum(ismember(phase.template, {'Probe-HighLow'})) == phase.n_each_probe);
+	assert(sum(ismember(phase.template, {'Probe-Mediums'})) == phase.n_each_probe);
 end

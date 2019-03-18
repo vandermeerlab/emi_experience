@@ -2,6 +2,11 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 
 	disp(sprintf('Starting trial %d', state.n));
 	NlxSendCommand(sprintf('-PostEvent "trial start" 0 0'));
+    
+    if strcmp(state.trial, 'Probe-HighLow') || strcmp(state.trial, 'Probe-Mediums')
+        NlxSendCommand(sprintf('-PostEvent "probe trial" 0 0'));
+    end
+    
 	finished = 0;
 
 	while ~finished && toc(state.timer) < expt.max_time
@@ -104,9 +109,6 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 				play(expt.tone);
 				NlxSendCommand(sprintf('-PostEvent "tone on" 0 0'));
                 approaching.tones = approaching.tones - 1;
-% 				if isequal(approaching, state.control)
-% 					state.control.tones = state.control.tones - 1;
-% 				end
 			end
 			NlxSendCommand(sprintf('-PostEvent "entering %s state" 0 0', new_state));
 
@@ -119,7 +121,6 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 			state.state = new_state;
         end
 
-
 		seconds = toc(state.timer);
 		time.hours = floor(seconds / (60 * 60));
 		time.minutes = mod(floor(seconds / 60), 60);
@@ -131,10 +132,10 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 		drawnow;
     end
 
-    if strcmp(state.trial, 'Probe-HighLow') | strcmp(state.trial, 'Probe-Mediums')
-        fprintf(state.log, '%s~\n', arm.name);
+    if strcmp(state.trial, 'Probe-HighLow') || strcmp(state.trial, 'Probe-Mediums')
+        fprintf(state.log, '~ %s ~\n', arm.name);
     else
-        fprintf(state.log, '%s~\n', arm.name);
+        fprintf(state.log, '%s\n', arm.name);
     end
     
     if strcmp(approaching.name, 'High')

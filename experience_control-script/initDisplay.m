@@ -8,7 +8,7 @@ function state = initDisplay(state)
 	state.display.template = annotation('textbox', [0.05, 0.05, 0.2, 0.9]);
 	set(state.display.template, 'String', 'Template');
 	set(state.display.template, 'FitBoxToText', 'off');
-	set(state.display.template, 'FontSize', 14);
+	set(state.display.template, 'FontSize', 13);
 	set(state.display.template, 'HorizontalAlignment', 'center'); % left center right
 	set(state.display.template, 'VerticalAlignment', 'middle'); % top middle bottom
 
