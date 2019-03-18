@@ -130,6 +130,12 @@ function [expt, phase, state] = runTrial(expt, phase, state)
     
 		drawnow;
     end
+
+    if strcmp(state.trial, 'Probe-HighLow') | strcmp(state.trial, 'Probe-Mediums')
+        fprintf(state.log, '%s~\n', arm.name);
+    else
+        fprintf(state.log, '%s~\n', arm.name);
+    end
     
     if strcmp(approaching.name, 'High')
         state.high = approaching;
@@ -140,8 +146,6 @@ function [expt, phase, state] = runTrial(expt, phase, state)
     elseif strcmp(approaching.name, 'Control')
         state.control = approaching;
     end
-
-    fprintf(state.log, '%s\n', arm.name);
 
 	NlxSendCommand(sprintf('-PostEvent "trial end" 0 0'));
 end
