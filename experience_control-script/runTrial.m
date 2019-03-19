@@ -131,11 +131,21 @@ function [expt, phase, state] = runTrial(expt, phase, state)
     
 		drawnow;
     end
-
-    if strcmp(state.trial, 'Probe-HighLow') || strcmp(state.trial, 'Probe-Mediums')
-        fprintf(state.log, '~ %s ~\n', arm.name);
+    
+    if state.rewarded
+        outcome = '+';
     else
-        fprintf(state.log, '%s\n', arm.name);
+        outcome = '-';
+    end
+
+    if strcmp(state.trial, 'Probe-HighLow')
+        state.probed_highlow = state.probed_highlow + 1;
+        fprintf(state.log, '~ %s %s\n', arm.name, outcome);
+    elseif strcmp(state.trial, 'Probe-Mediums')
+        state.probed_mediums = state.probed_mediums + 1;
+        fprintf(state.log, '~ %s %s\n', arm.name, outcome);
+    else
+        fprintf(state.log, '%s %s\n', arm.name, outcome);
     end
     
     if strcmp(approaching.name, 'High')

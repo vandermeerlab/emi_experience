@@ -1,34 +1,48 @@
 function [expt, phase, state] = getTrial(expt, phase, state)
 	%  Selects next trial given a list of available available_trials
     
-	state.n = state.n + 1;
+	state.n = state.n + 1; % +1 for the right index
 	% possible states are:
 	%  'return': initial state, returning from feeder to center
 	%  'approach': running from center to feeder
 	state.state = 'return';
 	state.last_pb_state = 0;
-
+    
 	template = phase.template{state.n};
 	if strcmp(template, 'HighLow')
+        probes_left = phase.n_each_probe - state.probed_highlow;
 		n_high = state.high.rewarded + state.high.unrewarded;
 		n_low = state.low.rewarded + state.low.unrewarded;
-		p_high = n_high / (n_high + n_low);
-		if rand() < p_high
-			state.trial = state.high;
-		else
-			state.trial = state.low;
-		end
-		state.rewarded = isRewarded(state.trial, state.probed_highlow, expt.feeder.prob);
+        if n_high <= probes_left
+            state.trial = state.low;
+        elseif n_low <= probes_left
+            state.trial = state.high;
+        else
+            p_high = n_high / (n_high + n_low);
+            if rand() < p_high
+                state.trial = state.high;
+            else
+                state.trial = state.low;
+            end
+        end
+        state.rewarded = isRewarded(state.trial, expt.feeder.prob);
 	elseif strcmp(template, 'Mediums')
+        probes_left = phase.n_each_probe - state.probed_mediums;
 		n_medium = state.medium.rewarded + state.medium.unrewarded;
 		n_control = state.control.rewarded + state.control.unrewarded;
-		p_medium = n_medium / (n_medium + n_control);
-		if rand() < p_medium
-			state.trial = state.medium;
-		else
-			state.trial = state.control;
-		end
-		state.rewarded = isRewarded(state.trial, state.probed_mediums, expt.feeder.prob);
+        if n_medium <= probes_left
+            state.trial = state.control;
+        elseif n_control <= probes_left;
+            state.trial = state.medium;
+        else
+            p_medium = n_medium / (n_medium + n_control);
+            if rand() < p_medium
+                state.trial = state.medium;
+            else
+                state.trial = state.control;
+            end
+        end
+        state.rewarded = isRewarded(state.trial, expt.feeder.prob);
 	else
 		state.trial = template;
 		if strcmp(template, 'Probe-HighLow')
@@ -38,9 +52,10 @@ function [expt, phase, state] = getTrial(expt, phase, state)
 			assert(strcmp(template, 'Probe-Mediums'))
 			combined.rewarded = min([state.medium.rewarded, state.control.rewarded]);
 			combined.unrewarded = min([state.medium.unrewarded, state.control.unrewarded]);
-		end
-		state.rewarded = isRewarded(combined, 0, expt.feeder.prob);
-	end
+        end
+        assert(combined.rewarded + combined.unrewarded > 0)
+        state.rewarded = isRewarded(combined, expt.feeder.prob);
+    end
 
 	if isequal(state.trial, state.control)
 		% For control, randomly select tone unless we are forced
