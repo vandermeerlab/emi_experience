@@ -29,9 +29,11 @@ function [expt, phase, state] = runTrial(expt, phase, state)
                 if state.rewarded
                     fireFeeder(expt.feeder_port, arm.feeder.pin, expt.feeder.n_pellets);
                     NlxSendCommand(sprintf('-PostEvent "firing feeder %s" 0 0', arm.feeder.name));
+                    fprintf(state.log, '%s +\n', arm.name);
                     finished = 1;
                 else
                 	NlxSendCommand(sprintf('-PostEvent "NOT firing feeder %s" 0 0', arm.feeder.name));
+                	fprintf(state.log, '%s -\n', arm.name);
                     finished = 1;
                 end
             end
@@ -47,8 +49,6 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 
         drawnow;
     end
-
-    fprintf(state.log, '%s\n', arm.name);
     
 	NlxSendCommand(sprintf('-PostEvent "trial end" 0 0'));
 end
