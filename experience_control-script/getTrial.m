@@ -98,10 +98,10 @@ function [expt, phase, state] = getTrial(expt, phase, state)
     
     % Trial
 	lines = cell(1, 4);
-    lines{1} = sprintf('%s: %d', high, state.high.rewarded + state.high.unrewarded);
-    lines{2} = sprintf('%s: %d', low, state.low.rewarded + state.low.unrewarded);
-    lines{3} = sprintf('%s: %d', medium, state.medium.rewarded + state.medium.unrewarded);
-    lines{4} = sprintf('%s: %d', control, state.control.rewarded + state.control.unrewarded);
+    lines{1} = sprintf('%s: \t %d+ \t %d- \t total %d', high, state.high.rewarded, state.high.unrewarded, state.high.rewarded + state.high.unrewarded);
+    lines{2} = sprintf('%s: \t %d+ \t %d- \t total %d', low, state.low.rewarded, state.low.unrewarded, state.low.rewarded + state.low.unrewarded);
+    lines{3} = sprintf('%s: \t %d+ \t %d- \t total %d', medium, state.medium.rewarded, state.medium.unrewarded, state.medium.rewarded + state.medium.unrewarded);
+    lines{4} = sprintf('%s: \t %d+ \t %d- \t total %d', control, state.control.rewarded, state.control.unrewarded, state.control.rewarded + state.control.unrewarded);
     set(state.display.messages, 'Color', 'black');
     set(state.display.messages, 'String', lines);
     

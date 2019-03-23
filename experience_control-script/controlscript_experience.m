@@ -26,6 +26,7 @@ disp('Initializing settings');
 
 expt.path = 'C:\\Users\\mvdmlab\\Documents\\GitHub\\mvdmlab-tasks\\emi_experience\\experience_control-script\\daily\\';
 expt.name = sprintf('%s_experience', datestr(datetime('now'), 'yyyy-mm-dd'));
+expt.seed = 10; % randi(intmax);
 expt.photobeam_port = 1; % TTLInputPort
 expt.feeder_port = 2; % TTLOutputPort
 
@@ -127,6 +128,8 @@ play(expt.tone)
 
 %% Run maze
 disp('Start of experience maze experiment');
+
+rng(expt.seed);
 
 % Running state
 state.high.name = 'High';
