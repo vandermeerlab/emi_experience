@@ -15,34 +15,42 @@ function [expt, phase, state] = getTrial(expt, phase, state)
 		n_low = state.low.rewarded + state.low.unrewarded;
         if n_high <= probes_left
             state.trial = state.low;
+        	paired = state.high;
         elseif n_low <= probes_left
             state.trial = state.high;
+            paired = state.low;
         else
             p_high = n_high / (n_high + n_low);
             if rand() < p_high
                 state.trial = state.high;
+            	paired = state.low;
             else
                 state.trial = state.low;
+            	paired = state.high;
             end
         end
-        state.rewarded = isRewarded(state.trial, expt.feeder.prob);
+        state.rewarded = isRewarded(state.trial, paired, expt.feeder.prob);
 	elseif strcmp(template, 'Mediums')
         probes_left = phase.n_each_probe - state.probed_mediums;
 		n_medium = state.medium.rewarded + state.medium.unrewarded;
 		n_control = state.control.rewarded + state.control.unrewarded;
         if n_medium <= probes_left
             state.trial = state.control;
+        	paired = state.medium;
         elseif n_control <= probes_left;
             state.trial = state.medium;
+            paired = state.control;
         else
             p_medium = n_medium / (n_medium + n_control);
             if rand() < p_medium
                 state.trial = state.medium;
+            	paired = state.control;
             else
                 state.trial = state.control;
+            	paired = state.medium;
             end
         end
-        state.rewarded = isRewarded(state.trial, expt.feeder.prob);
+        state.rewarded = isRewarded(state.trial, paired, expt.feeder.prob);
 	else
 		state.trial = template;
 		if strcmp(template, 'Probe-HighLow')
@@ -54,7 +62,9 @@ function [expt, phase, state] = getTrial(expt, phase, state)
 			combined.unrewarded = min([state.medium.unrewarded, state.control.unrewarded]);
         end
         assert(combined.rewarded + combined.unrewarded > 0)
-        state.rewarded = isRewarded(combined, expt.feeder.prob);
+        paired.rewarded = combined.unrewarded;
+        paired.unrewarded = combined.rewarded;
+        state.rewarded = isRewarded(combined, paired, expt.feeder.prob);
     end
 
 	if isequal(state.trial, state.control)
