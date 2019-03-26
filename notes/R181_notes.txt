@@ -1,9 +1,13 @@
 Notes for R181
 ==============
 
+2019-03-26
+- Fed 5g chow
+- (EMI) Pedestal in RR3 for 30 min with white noise on in the AM
+- Seemed curious, exploratory for the entire time on the pedestal.
+- Fine with being handled by picking him up around his body.
+- (LP) handled rat in vivarium in the PM
+
 2019-03-25
 - Food restriction started
-
-2019-03-26
-- Pedestal in RR3
-- handled rat in vivarium
+- 540g

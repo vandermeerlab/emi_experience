@@ -1,0 +1,14 @@
+Notes for R182
+==============
+
+2019-03-26
+- Fed 5g chow
+- (EMI) Pedestal in RR3 for 30 min with white noise on in the AM
+- Very exploratory on the pedestal.
+- Jumped to the floor from the pedestal early on during the pedestal time.
+- Squeaked when picked up to move from the pedestal back to the homecage.
+- (LP) handled rat in vivarium in the PM
+
+2019-03-25
+- Food restriction started
+- 541g
