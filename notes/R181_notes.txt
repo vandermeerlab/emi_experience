@@ -6,3 +6,4 @@ Notes for R181
 
 2019-03-26
 - Pedestal in RR3
+- handled rat in vivarium
