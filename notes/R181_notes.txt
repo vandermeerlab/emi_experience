@@ -1,6 +1,10 @@
 Notes for R181
 ==============
 
+2019-03-29
+- Fed 5g pellets
+- (EMI) 10 min on pedestal in RR3. Getting more comfortable and less exploratory.
+
 2019-03-28
 - Fed 5g pellets
 - (EMI) handled in colony room. Now I can pick him up and touch his head and face without complaint.
