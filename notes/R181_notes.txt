@@ -1,5 +1,9 @@
 Notes for R181
 ==============
+2019-03-30
+- Fed 5g pellets
+- (LMP) handled in vivarium, seemed stiff when picked up w noticeably fast HR
+- 30 min on pedestal, fell off from exploring and squeaked loudly when put back on. Afterwards exhibited freezing and grooming behavior.
 
 2019-03-29
 - Fed 5g pellets
