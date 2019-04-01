@@ -1,5 +1,10 @@
 Notes for R182
 ==============
+
+2019-04-01
+- Fed 5g pellets
+- (EMI) 10 min on pedestal in RR3. Still exploratory.
+
 2019-03-31
 - Fed 5g pellets
 - Is better at being held, seems less stiff

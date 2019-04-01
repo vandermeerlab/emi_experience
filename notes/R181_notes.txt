@@ -1,5 +1,11 @@
 Notes for R181
 ==============
+
+2019-04-01
+- Fed 5g pellets
+- (EMI) 10 min on pedestal in RR3. Seems a lot calmer on the pedestal. Rested for a few minutes.
+- Easy to pick up and handle.
+
 2019-03-31
 - Fed 5g pellets
 - (LMP) Seemed much calmer than yesterday, less stiff when picked up
