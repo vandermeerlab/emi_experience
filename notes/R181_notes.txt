@@ -1,5 +1,13 @@
 Notes for R181
 ==============
+
+2019-04-04
+- 5 min on pedestal before and after maze
+- North start
+- (EMI) ran all 80 trials in 43 min
+- lingers at the South feeder
+- Fed 8g pellets
+
 2019-04-03
 - Fed 8g pellets
 - 5 min on pedestal before and after maze
