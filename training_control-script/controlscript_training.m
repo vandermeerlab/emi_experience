@@ -105,6 +105,7 @@ set(state.display.messages, 'String', '');
 while state.n < phase.total
     [phase, state] = getTrial(phase, state, expt.feeder.prob);
     [expt, phase, state] = runTrial(expt, phase, state);
+    set(state.display.fig, 'PaperPositionMode', 'auto');
     saveas(state.display.fig, [expt.path, expt.name, '.png']);
 end
 

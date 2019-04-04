@@ -79,8 +79,8 @@ expt.feeders = {expt.north.feeder, expt.east.feeder, expt.south.feeder, expt.wes
 expt.outcome2arm = containers.Map();
 expt.outcome2arm('High') = expt.east;
 expt.outcome2arm('Low') = expt.west;
-expt.outcome2arm('Medium') = expt.north;
-expt.outcome2arm('Control') = expt.south;
+expt.outcome2arm('Medium') = expt.south;
+expt.outcome2arm('Control') = expt.north;
 
 % Trial parameters
 expt.highlow_first = 1;
@@ -90,9 +90,9 @@ expt.max_time = 5 * 60 * 60; % max time for the experiment to run (sec)
 % phase parameters
 phase1.name = '1';
 phase1.high = 15;
-phase1.medium = 9;
+phase1.medium = 8;
 phase1.low = 3;
-phase1.control = 9;
+phase1.control = 8;
 phase1.n_each_probe = 2;
 phase1.highlow_first = expt.highlow_first;
 phase1.probe_highlow_first = expt.probe_highlow_first;
@@ -101,9 +101,9 @@ phase1.total = phase1.high+phase1.medium+phase1.low+phase1.control;
 
 phase2.name = '2';
 phase2.high = 15;
-phase2.medium = 9;
+phase2.medium = 8;
 phase2.low = 3;
-phase2.control = 9;
+phase2.control = 8;
 phase2.n_each_probe = 2;
 phase2.highlow_first = expt.highlow_first;
 phase2.probe_highlow_first = expt.probe_highlow_first; % or ~probe_highlow_first
