@@ -1,10 +1,16 @@
 Notes for R181
 ==============
+2019-04-03
+- Fed 8g pellets
+- 5 min on pedestal before and after maze
+- South start
+- (LMP) ran 80 trials in 41 min
+- exploratory on pedestal, calmer when picked up than on previous days
+
 2019-04-02
 - Fed 10g pellets
 - 5 min on pedestal before and after maze
 - North start
-
 - (LMP) ran ~45 trials in 45 min on maze -- didn't always eat pellets when dispensed on maze but understood how to run
 - Lots of standing on hind legs during maze
 - There was error in code on the 22nd trial that caused the S feeder to not dispense pellets, had to re-run cell and restart trial count
