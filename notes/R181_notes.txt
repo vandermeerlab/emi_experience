@@ -1,6 +1,14 @@
 Notes for R181
 ==============
 
+2019-04-05
+- Possible signs of bedding in the feces (eating the bedding)
+- 5 min on pedestal before and after maze
+- South start
+- (EMI) ran all 80 trials in 36 min
+- much less lingering at the South feeder specifically
+- Fed 10g pellets (found the wood block and some bedding in food container after ~30 min from giving it to him - not all of the food had been consumed at that point)
+
 2019-04-04
 - 5 min on pedestal before and after maze
 - North start
