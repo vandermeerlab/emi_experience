@@ -1,6 +1,15 @@
 Notes for R181
 ==============
 
+2019-04-07
+- 5 min on pedestal before and after maze
+- South start
+- (EMI) ran all 80 trials in 29 min
+- Fed 8g pellets
+
+2019-04-06
+
+
 2019-04-05
 - Possible signs of bedding in the feces (eating the bedding)
 - 5 min on pedestal before and after maze

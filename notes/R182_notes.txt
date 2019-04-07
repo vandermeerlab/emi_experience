@@ -1,6 +1,17 @@
 Notes for R182
 ==============
 
+2019-04-07
+- 5 min on pedestal before and after maze
+- South start
+- (EMI) ran 80 trials in 15 min
+- Pauses at the barrier when the same trial sequence has been run for a while (eg. many North in a row, will pause and investigate the barrier blocking the South arm)
+- Squeaked when taken off the maze
+- Fed 8g pellets
+
+2019-04-06
+
+
 2019-04-05
 - 5 min on pedestal before and after maze
 - South start
