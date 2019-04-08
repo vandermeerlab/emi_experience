@@ -3,6 +3,12 @@ Notes for R181
 
 2019-04-07
 - 5 min on pedestal before and after maze
+- North start
+- (EMI) ran all 80 trials in 28 min
+- Fed 10g pellets
+
+2019-04-07
+- 5 min on pedestal before and after maze
 - South start
 - (EMI) ran all 80 trials in 29 min
 - Fed 8g pellets

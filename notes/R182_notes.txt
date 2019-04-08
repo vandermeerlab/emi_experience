@@ -1,6 +1,13 @@
 Notes for R182
 ==============
 
+2019-04-08
+- 5 min on pedestal before and after maze
+- North start
+- (EMI) ran 80 trials in 13 min
+- Runs for some trials
+- Fed 8g pellets
+
 2019-04-07
 - 5 min on pedestal before and after maze
 - South start
