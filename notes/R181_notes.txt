@@ -1,11 +1,17 @@
 Notes for R181
 ==============
+2019-04-10
+-10 min on pedestal before and after maze
+- North start
+- (LMP) 80 trials in 28 min, some backtracking/climbing on tubing, pooped on pedestal
+- fed 8g pellets
+
 2019-04-09
 - 5 min on pedestal before and after maze
 - South start
 - (LMP)ran 80 trials in 30 min, lots of backtracking 
 - climbed on tubing on South end, pushed on barrier, pooped on pedestal
-- fed 10g
+- fed 10g pellets
 
 2019-04-08
 - 5 min on pedestal before and after maze
