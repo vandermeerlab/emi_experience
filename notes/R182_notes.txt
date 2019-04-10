@@ -1,5 +1,12 @@
 Notes for R182
 ==============
+2019-04-10
+- 10 min on pedestal before and after maze
+- North start
+- (LMP) ran 80 trials in 12 min
+- squeaked when picked up, backtracked once or twice
+- Fed 8g pellets
+
 2019-04-09
 - 10 min on pedestal before and after maze -- before maze was recorded in 2 5min increments, after maze recorded in 1 10min increment 
 - South start
