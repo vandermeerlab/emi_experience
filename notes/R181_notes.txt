@@ -1,5 +1,15 @@
 Notes for R181
 ==============
+
+2019-04-11
+- weighs more than expected (505g)
+- first day of 75% rewarded
+- 10 min pedestal before and after
+- fell off maze at 14 min at choice point
+- defecated on maze at North feeder
+- 80 trials in 33 min
+- fed 8g pellets
+
 2019-04-10
 -10 min on pedestal before and after maze
 - North start
