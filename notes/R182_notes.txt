@@ -1,12 +1,18 @@
 Notes for R182
 ==============
 
+2019-04-12
+- 10 min pedestal before and after maze
+- 80 trials in 18 min
+- squeaked when taken off the maze
+- fed 8g pellets
+
 2019-04-11
 - first day of 75% rewarded
 - 10 min pedestal before and after maze
 - camera not working (seems like it was disconnected from sharing the acquisition system and not properly reconnected)
 - 80 trials in 15 min
-- fed 8 g pellets
+- fed 8g pellets
 
 2019-04-10
 - 10 min on pedestal before and after maze
