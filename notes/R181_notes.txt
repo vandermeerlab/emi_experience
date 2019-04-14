@@ -1,5 +1,17 @@
 Notes for R181
 ==============
+2019-04-14
+- 10 min pedestal before and after maze
+- (LMP) 80 trials in 19 min
+- some backtracking/loitering but overall efficient
+- still very exploratory on pedestal, almost fell off
+- fed 6g pelletsx
+
+2019-04-13
+- 10 min pedestal before and after maze
+- (LMP) 80 trials in 24 min
+- lots of backtracking and standing up on hind legs at endpoints of maze
+- fed 6g pellets
 
 2019-04-12
 - 10 min pedestal before and after maze
