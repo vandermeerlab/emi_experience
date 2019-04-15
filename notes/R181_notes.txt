@@ -1,5 +1,11 @@
 Notes for R181
 ==============
+
+2019-04-15
+- 10 min pedestal
+- 80 trials in 20 min
+- fed 6g pellets
+
 2019-04-14
 - 10 min pedestal before and after maze
 - (LMP) 80 trials in 19 min

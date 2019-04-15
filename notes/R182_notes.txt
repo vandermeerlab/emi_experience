@@ -1,5 +1,12 @@
 Notes for R182
 ==============
+
+2019-04-15
+- 10 min pedestal
+- (EMI) deliberates on the maze, especially when the same barrier has been up a few trials
+- 80 trials in 12 min
+- fed 8g pellets
+
 2019-04-14
 - 10 min pedestal before and after maze
 - (LMP) 80 trials in 12 min
