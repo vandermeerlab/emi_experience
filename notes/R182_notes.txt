@@ -1,5 +1,9 @@
 Notes for R182
 ==============
+2019-04-16
+- 10 min pedestal before and after maze - first and last 5 min before and after maze w head touching to get used to being plugged in - seemed very agitated on pedestal
+- (LMP) 80 trials in 11 minutes, keeps trying to bite my glove when I move barriers
+- fed 8g pellets
 
 2019-04-15
 - 10 min pedestal
