@@ -1,5 +1,14 @@
 Notes for R181
 ==============
+
+2019-04-18
+- 10 min on pedestal. Half time alone, other half being interacted with.
+- (EMI) fell off track at choice point at 2.5min
+- 80 trials in 23 min
+- fed 6g pellets
+
+2019-04-17
+
 2019-04-16
 - 10 min pedestal before and after maze - first and last 5 min before and after maze w head touching to get used to being plugged in
 - (LMP) 80 trials in 17 min
