@@ -8,6 +8,9 @@ Notes for R182
 - fed 8g pellets
 
 2019-04-17
+- 10 min pedestal before and after maze - half the time alone, other half interacted with
+- 80 trials in 11 min
+- fed 8g pellets 
 
 2019-04-16
 - 10 min pedestal before and after maze - first and last 5 min before and after maze w head touching to get used to being plugged in - seemed very agitated on pedestal

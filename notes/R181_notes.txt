@@ -8,6 +8,9 @@ Notes for R181
 - fed 6g pellets
 
 2019-04-17
+- 10 min pedestal before and after maze -- half of the time interacted with, half of the time alone
+- (LMP) 80 trials in 16 min 
+- fed 6g pellets
 
 2019-04-16
 - 10 min pedestal before and after maze - first and last 5 min before and after maze w head touching to get used to being plugged in
