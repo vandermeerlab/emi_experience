@@ -1,6 +1,11 @@
 Notes for R181
 ==============
 
+2019-04-23
+- 10 min on pedestal
+- 80 trials in 17 min
+- fed 6g pellets
+
 2019-04-18
 - 10 min on pedestal. Half time alone, other half being interacted with.
 - (EMI) fell off track at choice point at 2.5min
