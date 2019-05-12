@@ -1,9 +1,51 @@
 Notes for R181
 ==============
 
+2019-05-11
+Did not eat all pellets in home cage overnight
+T-maze behavior
+- 10 min on pedestal before and after running
+- 21 trials in 20 min
+- session ended early because rat was freezing and defecated on the track and didn't consume too many pellets on the track
+
+2019-05-10
+Turning tetrodes
+T-maze behavior
+- 10min on the pedestal before and after
+- 77 trials in 45 min
+- At the end seemed scared of the south arm - stayed in the center for an extended period and defecated a bunch
+- Possible cause was fire alarm test in the AM
+
+2019-05-09
+Turning tetrodes
+T-maze behavior
+- 80 trials in 38min
+- 10 min on pedestal
+- South start
+- 75% rewarded
+
+2019-05-08
+Turning tetrodes
+
+2019-05-07
+Turning tetrodes
+
+2019-05-01
+Turning tetrodes
+
+2019-04-26
+Hyperdrive surgery!
+16-tetrode, 2-ref drive targeted to left dCA1 hippocampus
+See notes for more details.
+
 2019-04-23
 - 10 min on pedestal
 - 80 trials in 17 min
+- fed 6g pellets
+
+2019-04-19
+- 10 min pedestal before and after, with half time being interacted with
+- 80 trials in 14 min
 - fed 6g pellets
 
 2019-04-18
