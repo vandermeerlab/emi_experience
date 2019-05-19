@@ -1,6 +1,26 @@
 Notes for R181
 ==============
 
+2019-05-18
+- 5 min pedestal before and after
+- plugged in! (First session running plugged in)
+- 41 trials in 20 min
+
+2019-05-17
+- turning
+
+2019-05-16
+- 10 min pedestal before and after running
+- 80 trials in 35 min
+- no turning
+- fed 20g pellets
+
+2019-05-15
+- water bottle flooded cage overnight
+- 5 min on pedestal before and after running
+- north start
+- 40 trials in 20 min
+
 2019-05-11
 Did not eat all pellets in home cage overnight
 T-maze behavior
