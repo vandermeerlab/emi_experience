@@ -1,6 +1,14 @@
 Notes for R181
 ==============
 
+2019-05-19
+- 5 min pedestal before and after maze
+- 48 trials in 25 min
+- lots of noise when rat is at choice point by barriers ( but not in contact with them) maybe need to spray to reduce noise?
+- at about 22 min rat defecated by east feeder after not consuming the pellets and stood still near the choice point, so stopped the running phase
+- no turning
+- fed 12g pellets
+
 2019-05-18
 - 5 min pedestal before and after
 - plugged in! (First session running plugged in)
