@@ -1,6 +1,32 @@
 Notes for R181
 ==============
 
+2019-05-24
+- turning only
+- fed 12g pellets
+
+2019-05-23
+- 5 min pedestal before and after
+- behavior only
+- 80 trials in 32 min
+- fed 15g pellets
+
+2019-05-22
+- 5 min on pedestal before and after
+- headstage (without clip) came out at about 20 min
+- stopped consuming pellets at South feeder by the end of the session
+- 67 trials in 45 min
+- fed 15g pellets
+
+2019-05-21
+- 10 min on the pedestal before and after
+- clip on the implant came off when I went to plug in the headstage
+- headstage without clip came out at about 20 min
+- stopped running at about 22 min and spent a lot of time at the choice point
+- once he started going again he didn't consume the pellets
+- 56 trials in 45 min
+- fed 15g pellets
+
 2019-05-19
 - 5 min pedestal before and after maze
 - 48 trials in 25 min
