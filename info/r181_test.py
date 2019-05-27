@@ -29,3 +29,7 @@ position_filename = 'VT1.nvt'
 
 lfp_swr_filename = 'CSC11a.ncs'
 lfp_theta_filename = 'CSC11b.ncs'
+
+binsize = 12
+xedges = np.arange(14, 715+binsize, binsize)
+yedges = np.arange(0, 479+binsize, binsize)
