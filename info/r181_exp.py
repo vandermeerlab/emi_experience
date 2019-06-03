@@ -32,6 +32,7 @@ event_labels = dict(north_feeder='TTL Output on AcqSystem1_0 board 0 port 2 valu
                     return_state='entering return state')
 
 position_filename = 'VT1.nvt'
+pxl_to_cm = dict(x=3.13, y=2.73)
 
 lfp_swr_filename = 'CSC11a.ncs'
 
