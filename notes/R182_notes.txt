@@ -1,0 +1,157 @@
+Notes for R182
+==============
+
+2019-04-18
+- 10 min on pedestal. Half the time alone, other half being interacted with.
+- (EMI) still exhibits a bit of aggressive behavior - probably not worth moving forward to implant because he will need much more training before turning and plugging in would go smoothly
+- 80 trials in 11 min
+- fed 8g pellets
+
+2019-04-17
+- 10 min pedestal before and after maze - half the time alone, other half interacted with
+- 80 trials in 11 min
+- fed 8g pellets 
+
+2019-04-16
+- 10 min pedestal before and after maze - first and last 5 min before and after maze w head touching to get used to being plugged in - seemed very agitated on pedestal
+- (LMP) 80 trials in 11 minutes, keeps trying to bite my glove when I move barriers
+- fed 8g pellets
+
+2019-04-15
+- 10 min pedestal
+- (EMI) deliberates on the maze, especially when the same barrier has been up a few trials
+- 80 trials in 12 min
+- fed 8g pellets
+
+2019-04-14
+- 10 min pedestal before and after maze
+- (LMP) 80 trials in 12 min
+- kept pressing up with paws on barrier, bit my lab coat a couple times and attempted to bite my hand when barriers were being moved
+- fed 8g pellets
+
+2019-04-13
+- 10 min pedestal before and after maze
+- (LMP) 80 trials in 12 min 
+- some backtracking, still very agitated on pedestal
+- fed 8g pellets
+
+2019-04-12
+- 10 min pedestal before and after maze
+- 80 trials in 18 min
+- squeaked when taken off the maze
+- fed 8g pellets
+
+2019-04-11
+- first day of 75% rewarded
+- 10 min pedestal before and after maze
+- camera not working (seems like it was disconnected from sharing the acquisition system and not properly reconnected)
+- 80 trials in 15 min
+- fed 8g pellets
+
+2019-04-10
+- 10 min on pedestal before and after maze
+- North start
+- (LMP) ran 80 trials in 12 min
+- squeaked when picked up, backtracked once or twice
+- Fed 8g pellets
+
+2019-04-09
+- 10 min on pedestal before and after maze -- before maze was recorded in 2 5min increments, after maze recorded in 1 10min increment 
+- South start
+- (LMP) ran 80 trials in 15 min
+- at one point tried to bite my sleeve, fell off maze but caught himself underneath and was lifted back up. Did not seem to scare him but worth noting
+- Squeaked when picked up 
+- Fed 8g pellets
+
+2019-04-08
+- 5 min on pedestal before and after maze
+- North start
+- (EMI) ran 80 trials in 13 min
+- Runs for some trials
+- Fed 8g pellets
+
+2019-04-07
+- 5 min on pedestal before and after maze
+- South start
+- (EMI) ran 80 trials in 15 min
+- Pauses at the barrier when the same trial sequence has been run for a while (eg. many North in a row, will pause and investigate the barrier blocking the South arm)
+- Squeaked when taken off the maze
+- Fed 8g pellets
+
+2019-04-06
+- 10 min on pedestal before and after maze
+- North start
+- (LMP) very confident and comfortable w my presence in the room
+- ran 80 trials in 15 min 
+- fed 8g
+
+2019-04-05
+- 5 min on pedestal before and after maze
+- South start
+- (EMI) ran 80 trials in 18 min
+- Squeaked when taken off the maze
+- Fed 8g pellets
+
+2019-04-04
+- 5 min on pedestal before and after maze
+- North start
+- (EMI) ran 80 trials in 25 min
+- Runs for some trials
+- Fed 8g pellets
+
+2019-04-03
+- Fed 8g pellets
+- 5 min on pedestal before and after maze
+- South start
+- (LMP) ran 80 trials in 25 min -- very fast with little to no grooming or backtracking
+- exploratory on pedestal, lots of standing on hind legs
+
+2019-04-02
+- Fed 8g pellets
+- 5 min on pedestal before and after maze
+- North start
+
+- (LMP) first run on maze! Completed 80 trials in 42 minutes - ran very fast.
+- Still exploratory on pedestal, slipped off in post-maze 5 min period but climbed back on
+- Squeaked when moved from maze to pedestal and from pedestal to cage -- anxious
+- Some grooming behavior on maze
+
+2019-04-01
+- Fed 5g pellets
+- (EMI) 10 min on pedestal in RR3. Still exploratory.
+
+2019-03-31
+- Fed 5g pellets
+- Is better at being held, seems less stiff
+- 15 min on RR3 pedestal, seemed very exploratory, almost fell off a couple of times
+
+2019-03-30
+- Fed 5g pellets
+- (LMP) 30 min on pedestal in RR3 -- white noise machine with lights on. Seemed exploratory but definitely calmer and exhibited some grooming behavior, also chittered
+- Handed in vivarium, better with being picked up and moved around 
+
+2019-03-29
+- Fed 5g pellets
+- (EMI) 10 min on pedestal in RR3. Exploratory for the entire time.
+- Squeaked when picked up to move from the pedestal to the homecage.
+
+2019-03-28
+- Fed 5g pellets
+- (EMI) handled in colony room. Is cautious but able to be picked up around his belly. Still tightens up his muscles when picked up; not very relaxed while handling. Exploratory on my lap.
+
+2019-03-27
+- Fed 5g chow
+- (LMP) 5 min on pedestal, panicked and almost fell off pedestal a couple times, pooped but stayed on
+- Handled in vivarium, was exploratory on lap but less comfortable with being picked up and moved around, visibly anxious
+
+2019-03-26
+- Fed 5g chow
+- (EMI) Pedestal in RR3 for 30 min with white noise on in the AM
+- Very exploratory on the pedestal.
+- Jumped to the floor from the pedestal early on during the pedestal time.
+- Squeaked when picked up to move from the pedestal back to the homecage.
+- (LP) handled rat in vivarium in the PM
+
+2019-03-25
+- Food restriction started
+- 541g
