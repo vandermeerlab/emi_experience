@@ -22,7 +22,7 @@ function [expt, phase, state] = runTrial(expt, phase, state)
 	    			break;
 	    		end
 	    	end
-	    	assert(pb.pin == pb_state)
+	    	% assert(pb.pin == pb_state)
             
             NlxSendCommand(sprintf('-PostEvent "photobeam %s" 0 0', pb.name));
             

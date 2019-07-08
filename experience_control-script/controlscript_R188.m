@@ -77,10 +77,10 @@ expt.feeders = {expt.north.feeder, expt.east.feeder, expt.south.feeder, expt.wes
 
 % Map from outcome to arm
 expt.outcome2arm = containers.Map();
-expt.outcome2arm('High') = expt.west;
-expt.outcome2arm('Low') = expt.east;
-expt.outcome2arm('Medium') = expt.south;
-expt.outcome2arm('Control') = expt.north;
+expt.outcome2arm('High') = expt.north;
+expt.outcome2arm('Low') = expt.south;
+expt.outcome2arm('Medium') = expt.east;
+expt.outcome2arm('Control') = expt.west;
 
 % Trial parameters
 expt.highlow_first = 1;
