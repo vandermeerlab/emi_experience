@@ -26,3 +26,5 @@ event_labels = dict(north_feeder='TTL Output on AcqSystem1_0 board 0 port 0 valu
                     south_pb='TTL Input on AcqSystem1_0 board 0 port 1 value (0x0040).',
                     trial_start='trial start',
                     trial_end='trial end')
+
+pxl_to_cm = dict(x=3.93, y=3.4)
