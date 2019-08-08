@@ -4,7 +4,7 @@ import nept
 
 rat_id = 'R187'
 session_id = 'R187_exp'
-date = '2019-08-xx'
+date = '2019-08-08'
 session = 'R187-'+date
 
 location = 'RR1'
@@ -14,7 +14,9 @@ behavior = 'experience 4-arm maze'
 experimenter = 'Emily Irvine'
 
 event_filename = date + '-Events.nev'
-event_labels = dict(north_feeder='TTL Output on AcqSystem1_0 board 0 port 2 value (0x0010).',
+event_labels = dict(recording_start='Starting Recording',
+					recording_stop='Stopping Recording',
+					north_feeder='TTL Output on AcqSystem1_0 board 0 port 2 value (0x0010).',
                     not_north_feeder='NOT firing feeder NorthFeeder',
                     north_pb='TTL Input on AcqSystem1_0 board 0 port 1 value (0x0010).',
                     east_feeder='TTL Output on AcqSystem1_0 board 0 port 2 value (0x0020).',
@@ -40,3 +42,8 @@ lfp_swr_filename = 'CSC11a.ncs'
 binsize = 12
 xedges = np.arange(14, 715+binsize, binsize)
 yedges = np.arange(0, 479+binsize, binsize)
+
+task_times = dict()
+task_times['rest1'] = nept.Epoch([479.94], [611.0])
+task_times['run1'] = nept.Epoch([714.74], [1313.55])
+task_times['rest2'] = nept.Epoch([1375.58], [1506.21])
