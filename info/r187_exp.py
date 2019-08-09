@@ -39,6 +39,8 @@ pxl_to_cm = dict(x=3.13, y=2.73)
 
 lfp_swr_filename = 'CSC11a.ncs'
 
+fs = 2000
+
 binsize = 12
 xedges = np.arange(14, 715+binsize, binsize)
 yedges = np.arange(0, 479+binsize, binsize)
