@@ -1,11 +1,10 @@
-import os
 import numpy as np
 import nept
 
-rat_id = 'R187'
-session_id = 'R187_exp01'
-date = '2019-08-09'
-session = 'R187-'+date
+rat_id = 'R192'
+session_id = rat_id+'_exp01'
+date = '2019-09-10'
+session = rat_id+'-'+date
 
 location = 'RR1'
 
@@ -37,7 +36,7 @@ event_labels = dict(recording_start='Starting Recording',
 position_filename = 'VT1.nvt'
 pxl_to_cm = dict(x=3.13, y=2.73)
 
-lfp_swr_filename = 'CSC12a.ncs'
+lfp_swr_filename = 'CSC9a.ncs'
 
 fs = 2000
 
@@ -46,11 +45,11 @@ xedges = np.arange(14, 715+binsize, binsize)
 yedges = np.arange(0, 479+binsize, binsize)
 
 task_times = dict()
-task_times['rest1'] = nept.Epoch([336.76], [1261.41])
-task_times['run1'] = nept.Epoch([1311.69], [3003.76])
-task_times['rest2'] = nept.Epoch([3029.79], [3933.87])
-task_times['run2'] = nept.Epoch([4013.66], [5359.62])
-task_times['rest3'] = nept.Epoch([5406.63], [6367.69])
+task_times['rest1'] = nept.Epoch([2524.29], [3425.76])
+task_times['run1'] = nept.Epoch([3501.78], [7387.43])
+task_times['rest2'] = nept.Epoch([7461.96], [8364.87])
+task_times['run2'] = nept.Epoch([8414.82], [10301.97])
+task_times['rest3'] = nept.Epoch([10356.83], [11261.16])
 
-probe_choice = ['east', 'south', 'west', 'north',
-				'west', 'north', 'east', 'south']
+probe_choice = ['south', 'west', 'south', 'west',
+                'south', 'west', 'south', 'west']
