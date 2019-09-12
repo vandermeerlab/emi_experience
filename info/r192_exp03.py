@@ -2,8 +2,8 @@ import numpy as np
 import nept
 
 rat_id = 'R192'
-session_id = rat_id+'_exp02'
-date = '2019-09-11'
+session_id = rat_id+'_exp03'
+date = '2019-09-12'
 session = rat_id+'-'+date
 
 location = 'RR1'
@@ -45,11 +45,11 @@ xedges = np.arange(14, 715+binsize, binsize)
 yedges = np.arange(0, 479+binsize, binsize)
 
 task_times = dict()
-task_times['rest1'] = nept.Epoch([809.79], [1711.56])
-task_times['run1'] = nept.Epoch([1758.04], [3184.86])
-task_times['rest2'] = nept.Epoch([3251.01], [4152.41])
-task_times['run2'] = nept.Epoch([4212.62], [5522.69])
-task_times['rest3'] = nept.Epoch([5554.3], [6456.29])
+task_times['rest1'] = nept.Epoch([821.59], [1723.05])
+task_times['run1'] = nept.Epoch([1760.61], [3487.15])
+task_times['rest2'] = nept.Epoch([3516.35], [4418.8])
+task_times['run2'] = nept.Epoch([4460.63], [5439.21])
+task_times['rest3'] = nept.Epoch([5496.99], [6398.86])
 
-probe_choice = ['west', 'south', 'west', 'north',
-                'west', 'north', 'west', 'south']
+probe_choice = ['south', 'west', 'south', 'west',
+                'north', 'west', 'south', 'west']

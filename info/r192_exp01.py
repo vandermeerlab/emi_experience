@@ -36,7 +36,7 @@ event_labels = dict(recording_start='Starting Recording',
 position_filename = 'VT1.nvt'
 pxl_to_cm = dict(x=3.13, y=2.73)
 
-lfp_swr_filename = 'CSC9a.ncs'
+lfp_swr_filename = date + '_CSC9b.ncs'
 
 fs = 2000
 
