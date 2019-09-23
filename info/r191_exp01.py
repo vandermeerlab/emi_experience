@@ -12,6 +12,12 @@ species = 'rat'
 behavior = 'experience 4-arm maze'
 experimenter = 'Emily Irvine'
 
+arm_to_outcome = dict()
+arm_to_outcome['north'] = 'Control'
+arm_to_outcome['east'] = 'Low'
+arm_to_outcome['south'] = 'Medium'
+arm_to_outcome['west'] = 'High'
+
 event_filename = date + '-Events.nev'
 event_labels = dict(recording_start='Starting Recording',
                     recording_stop='Stopping Recording',
