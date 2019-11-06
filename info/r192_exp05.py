@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import nept
 
@@ -18,7 +19,9 @@ arm_to_outcome['east'] = 'Medium'
 arm_to_outcome['south'] = 'Low'
 arm_to_outcome['west'] = 'Control'
 
-event_filename = date + '-Events.nev'
+data_filepath = os.path.join("E:\\", "data", "data-experience", rat_id, "RR1", rat_id+"_"+ date +"_recording")
+
+event_filename = os.path.join(data_filepath, date + '-Events.nev')
 event_labels = dict(recording_start='Starting Recording',
                     recording_stop='Stopping Recording',
                     north_feeder='TTL Output on AcqSystem1_0 board 0 port 2 value (0x0010).',
@@ -39,10 +42,10 @@ event_labels = dict(recording_start='Starting Recording',
                     approach_state='entering approach state',
                     return_state='entering return state')
 
-position_filename = 'VT1.nvt'
+position_filename = os.path.join(data_filepath, 'VT1.nvt')
 pxl_to_cm = dict(x=3.13, y=2.73)
 
-lfp_swr_filename = date + '_CSC12a.ncs'
+lfp_swr_filename = os.path.join(data_filepath, date + '_CSC12a.ncs')
 
 fs = 2000
 

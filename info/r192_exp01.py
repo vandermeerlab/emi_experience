@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import nept
 
@@ -17,6 +18,8 @@ arm_to_outcome['north'] = 'High'
 arm_to_outcome['east'] = 'Medium'
 arm_to_outcome['south'] = 'Low'
 arm_to_outcome['west'] = 'Control'
+
+data_filepath = os.path.join("E:\\", "data", "data-experience", rat_id, "RR1", rat_id+"_"+ date +"_recording")
 
 event_filename = date + '-Events.nev'
 event_labels = dict(recording_start='Starting Recording',
@@ -42,7 +45,7 @@ event_labels = dict(recording_start='Starting Recording',
 position_filename = 'VT1.nvt'
 pxl_to_cm = dict(x=3.13, y=2.73)
 
-lfp_swr_filename = date + '_CSC9b.ncs'
+lfp_swr_filename = os.path.join(data_filepath, date + '_CSC9b.ncs')
 
 fs = 2000
 
